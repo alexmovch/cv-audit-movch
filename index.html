@@ -1816,6 +1816,207 @@
   </div>
 </section>
 
+<!-- COMMENT L'IA LIT TON CV -->
+<section class="section" id="ia-cv" style="background:var(--blue-900);border-top:1px solid var(--glass-border);">
+  <h2 class="section-title">Comment l'IA lit ton CV (et pourquoi elle le rejette)</h2>
+  <p class="section-sub">Ce n'est pas un humain qui decide. C'est un algorithme. Voici exactement comment il fonctionne.</p>
+
+  <!-- PIPELINE ATS -->
+  <div style="max-width:900px;margin:0 auto 60px;">
+    <h3 style="font-size:20px;font-weight:800;margin-bottom:24px;color:var(--accent);">Le pipeline technique en 4 etapes</h3>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px;">
+      <div style="background:var(--glass);border:1px solid var(--glass-border);border-radius:12px;padding:24px;text-align:center;">
+        <div style="font-size:32px;font-weight:900;color:var(--accent);margin-bottom:8px;">1</div>
+        <div style="font-size:15px;font-weight:700;margin-bottom:8px;">Parsing OCR</div>
+        <div style="font-size:12px;color:var(--white-50);line-height:1.6;">Le systeme convertit ton PDF/DOCX en texte brut. Les colonnes, tableaux, images et icones cassent cette etape. 43% des CV ont des erreurs de parsing.</div>
+      </div>
+      <div style="background:var(--glass);border:1px solid var(--glass-border);border-radius:12px;padding:24px;text-align:center;">
+        <div style="font-size:32px;font-weight:900;color:var(--accent);margin-bottom:8px;">2</div>
+        <div style="font-size:15px;font-weight:700;margin-bottom:8px;">NLP & NER</div>
+        <div style="font-size:12px;color:var(--white-50);line-height:1.6;">L'IA utilise le Natural Language Processing : tokenization, lemmatisation, Named Entity Recognition pour extraire nom, poste, entreprises, competences, dates.</div>
+      </div>
+      <div style="background:var(--glass);border:1px solid var(--glass-border);border-radius:12px;padding:24px;text-align:center;">
+        <div style="font-size:32px;font-weight:900;color:var(--accent);margin-bottom:8px;">3</div>
+        <div style="font-size:15px;font-weight:700;margin-bottom:8px;">Matching semantique</div>
+        <div style="font-size:12px;color:var(--white-50);line-height:1.6;">Des modeles type BERT/SBERT comparent ton CV a l'offre d'emploi. Pas juste les mots-cles exacts : le contexte, les synonymes, la pertinence globale. TF-IDF + embeddings.</div>
+      </div>
+      <div style="background:var(--glass);border:1px solid var(--glass-border);border-radius:12px;padding:24px;text-align:center;">
+        <div style="font-size:32px;font-weight:900;color:var(--accent);margin-bottom:8px;">4</div>
+        <div style="font-size:15px;font-weight:700;margin-bottom:8px;">Score & Decision</div>
+        <div style="font-size:12px;color:var(--white-50);line-height:1.6;">L'algorithme attribue un score sur 100. En dessous de 80 : rejet automatique, aucun humain ne voit ton CV. 75% des candidatures s'arretent ici.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- QUI VEND CES SYSTEMES -->
+  <div style="max-width:900px;margin:0 auto 60px;">
+    <h3 style="font-size:20px;font-weight:800;margin-bottom:24px;color:var(--accent);">Qui vend ces systemes ?</h3>
+    <p style="font-size:14px;color:var(--white-50);margin-bottom:24px;line-height:1.7;">98.4% des Fortune 500 et la majorite des grandes entreprises francaises utilisent un ATS. Voici les principaux fournisseurs :</p>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:16px;">
+
+      <div style="background:var(--glass);border:1px solid var(--glass-border);border-radius:12px;padding:20px;border-left:3px solid #3b82f6;">
+        <div style="font-size:16px;font-weight:800;margin-bottom:4px;">Workday Recruiting</div>
+        <div style="font-size:28px;font-weight:900;color:#3b82f6;">39%</div>
+        <div style="font-size:11px;color:var(--white-50);margin-bottom:8px;">des Fortune 500</div>
+        <div style="font-size:12px;color:var(--white-70);line-height:1.6;">Leader mondial. IA integree pour le matching predictif. Utilise par Renault, Sanofi, Thales, Pernod Ricard en France. 150+ clients francais.</div>
+        <div style="font-size:10px;color:var(--white-30);margin-top:8px;font-family:monospace;">Detection : URL contient <strong>myworkdayjobs.com</strong></div>
+      </div>
+
+      <div style="background:var(--glass);border:1px solid var(--glass-border);border-radius:12px;padding:20px;border-left:3px solid #f59e0b;">
+        <div style="font-size:16px;font-weight:800;margin-bottom:4px;">SAP SuccessFactors</div>
+        <div style="font-size:28px;font-weight:900;color:#f59e0b;">13.2%</div>
+        <div style="font-size:11px;color:var(--white-50);margin-bottom:8px;">des Fortune 500</div>
+        <div style="font-size:12px;color:var(--white-70);line-height:1.6;">Integre a l'ecosysteme SAP. Tres present dans les grands groupes industriels francais qui utilisent deja SAP pour leur ERP (Total, L'Oreal, Airbus).</div>
+        <div style="font-size:10px;color:var(--white-30);margin-top:8px;font-family:monospace;">Detection : URL contient <strong>successfactors.com</strong></div>
+      </div>
+
+      <div style="background:var(--glass);border:1px solid var(--glass-border);border-radius:12px;padding:20px;border-left:3px solid #ef4444;">
+        <div style="font-size:16px;font-weight:800;margin-bottom:4px;">Oracle Taleo</div>
+        <div style="font-size:28px;font-weight:900;color:#ef4444;">~10%</div>
+        <div style="font-size:11px;color:var(--white-50);margin-bottom:8px;">des Fortune 500</div>
+        <div style="font-size:12px;color:var(--white-70);line-height:1.6;">Un des premiers ATS du marche (2004). Encore tres utilise par les administrations et grandes entreprises historiques. Parsing basique, rejet agressif.</div>
+        <div style="font-size:10px;color:var(--white-30);margin-top:8px;font-family:monospace;">Detection : URL contient <strong>taleo.net/careersection</strong></div>
+      </div>
+
+      <div style="background:var(--glass);border:1px solid var(--glass-border);border-radius:12px;padding:20px;border-left:3px solid #22c55e;">
+        <div style="font-size:16px;font-weight:800;margin-bottom:4px;">Greenhouse</div>
+        <div style="font-size:28px;font-weight:900;color:#22c55e;">60-70%</div>
+        <div style="font-size:11px;color:var(--white-50);margin-bottom:8px;">des startups/scale-ups tech</div>
+        <div style="font-size:12px;color:var(--white-70);line-height:1.6;">Standard dans la tech et les scale-ups. Interface moderne, scoring structure. Utilise par BlaBlaCar, Doctolib, Back Market, Datadog en France.</div>
+        <div style="font-size:10px;color:var(--white-30);margin-top:8px;font-family:monospace;">Detection : URL contient <strong>boards.greenhouse.io</strong></div>
+      </div>
+
+      <div style="background:var(--glass);border:1px solid var(--glass-border);border-radius:12px;padding:20px;border-left:3px solid #818cf8;">
+        <div style="font-size:16px;font-weight:800;margin-bottom:4px;">Lever (by Employ)</div>
+        <div style="font-size:28px;font-weight:900;color:#818cf8;">Top 5</div>
+        <div style="font-size:11px;color:var(--white-50);margin-bottom:8px;">en adoption tech</div>
+        <div style="font-size:12px;color:var(--white-70);line-height:1.6;">CRM + ATS combine. Populaire chez les startups en croissance rapide. Scoring avance, pipeline visuel. Utilise par des startups French Tech.</div>
+        <div style="font-size:10px;color:var(--white-30);margin-top:8px;font-family:monospace;">Detection : URL contient <strong>jobs.lever.co</strong></div>
+      </div>
+
+      <div style="background:var(--glass);border:1px solid var(--glass-border);border-radius:12px;padding:20px;border-left:3px solid #f97316;">
+        <div style="font-size:16px;font-weight:800;margin-bottom:4px;">iCIMS</div>
+        <div style="font-size:28px;font-weight:900;color:#f97316;">Enterprise</div>
+        <div style="font-size:11px;color:var(--white-50);margin-bottom:8px;">gros volumes</div>
+        <div style="font-size:12px;color:var(--white-70);line-height:1.6;">Plateforme enterprise pour les groupes a fort volume de recrutement. Automatisation complete du tri. IA pour matching et pre-selection automatique.</div>
+        <div style="font-size:10px;color:var(--white-30);margin-top:8px;font-family:monospace;">Detection : URL contient <strong>icims.com/jobs</strong></div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ENTREPRISES FRANCAISES -->
+  <div style="max-width:900px;margin:0 auto 60px;">
+    <h3 style="font-size:20px;font-weight:800;margin-bottom:24px;color:var(--accent);">Entreprises francaises : qui utilise quoi ?</h3>
+    <div style="background:var(--glass);border:1px solid var(--glass-border);border-radius:12px;overflow:hidden;">
+      <table style="width:100%;border-collapse:collapse;font-size:13px;">
+        <thead>
+          <tr style="background:rgba(255,255,255,0.05);">
+            <th style="padding:14px 16px;text-align:left;font-weight:700;color:var(--accent);border-bottom:1px solid var(--glass-border);">Entreprise</th>
+            <th style="padding:14px 16px;text-align:left;font-weight:700;color:var(--accent);border-bottom:1px solid var(--glass-border);">ATS utilise</th>
+            <th style="padding:14px 16px;text-align:left;font-weight:700;color:var(--accent);border-bottom:1px solid var(--glass-border);">Comment le detecter</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr style="border-bottom:1px solid var(--glass-border);">
+            <td style="padding:12px 16px;font-weight:600;">Renault Group</td>
+            <td style="padding:12px 16px;color:#3b82f6;font-weight:600;">Workday</td>
+            <td style="padding:12px 16px;color:var(--white-50);font-size:11px;font-family:monospace;">myworkdayjobs.com/Renault</td>
+          </tr>
+          <tr style="border-bottom:1px solid var(--glass-border);">
+            <td style="padding:12px 16px;font-weight:600;">Sanofi</td>
+            <td style="padding:12px 16px;color:#3b82f6;font-weight:600;">Workday</td>
+            <td style="padding:12px 16px;color:var(--white-50);font-size:11px;font-family:monospace;">sanofi.wd3.myworkdayjobs.com</td>
+          </tr>
+          <tr style="border-bottom:1px solid var(--glass-border);">
+            <td style="padding:12px 16px;font-weight:600;">Thales</td>
+            <td style="padding:12px 16px;color:#3b82f6;font-weight:600;">Workday</td>
+            <td style="padding:12px 16px;color:var(--white-50);font-size:11px;font-family:monospace;">thales.wd3.myworkdayjobs.com</td>
+          </tr>
+          <tr style="border-bottom:1px solid var(--glass-border);">
+            <td style="padding:12px 16px;font-weight:600;">Pernod Ricard</td>
+            <td style="padding:12px 16px;color:#3b82f6;font-weight:600;">Workday</td>
+            <td style="padding:12px 16px;color:var(--white-50);font-size:11px;font-family:monospace;">pernodricard.wd3.myworkdayjobs.com</td>
+          </tr>
+          <tr style="border-bottom:1px solid var(--glass-border);">
+            <td style="padding:12px 16px;font-weight:600;">L'Oreal</td>
+            <td style="padding:12px 16px;color:#f59e0b;font-weight:600;">SuccessFactors</td>
+            <td style="padding:12px 16px;color:var(--white-50);font-size:11px;font-family:monospace;">careers.loreal.com (SAP backend)</td>
+          </tr>
+          <tr style="border-bottom:1px solid var(--glass-border);">
+            <td style="padding:12px 16px;font-weight:600;">TotalEnergies</td>
+            <td style="padding:12px 16px;color:#f59e0b;font-weight:600;">SuccessFactors</td>
+            <td style="padding:12px 16px;color:var(--white-50);font-size:11px;font-family:monospace;">careers.totalenergies.com</td>
+          </tr>
+          <tr style="border-bottom:1px solid var(--glass-border);">
+            <td style="padding:12px 16px;font-weight:600;">Doctolib</td>
+            <td style="padding:12px 16px;color:#22c55e;font-weight:600;">Greenhouse</td>
+            <td style="padding:12px 16px;color:var(--white-50);font-size:11px;font-family:monospace;">boards.greenhouse.io/doctolib</td>
+          </tr>
+          <tr style="border-bottom:1px solid var(--glass-border);">
+            <td style="padding:12px 16px;font-weight:600;">BlaBlaCar</td>
+            <td style="padding:12px 16px;color:#22c55e;font-weight:600;">Greenhouse</td>
+            <td style="padding:12px 16px;color:var(--white-50);font-size:11px;font-family:monospace;">boards.greenhouse.io/blablacar</td>
+          </tr>
+          <tr style="border-bottom:1px solid var(--glass-border);">
+            <td style="padding:12px 16px;font-weight:600;">Back Market</td>
+            <td style="padding:12px 16px;color:#22c55e;font-weight:600;">Greenhouse</td>
+            <td style="padding:12px 16px;color:var(--white-50);font-size:11px;font-family:monospace;">boards.greenhouse.io/backmarket</td>
+          </tr>
+          <tr>
+            <td style="padding:12px 16px;font-weight:600;">Datadog (Paris)</td>
+            <td style="padding:12px 16px;color:#22c55e;font-weight:600;">Greenhouse</td>
+            <td style="padding:12px 16px;color:var(--white-50);font-size:11px;font-family:monospace;">boards.greenhouse.io/datadog</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <p style="font-size:12px;color:var(--white-30);margin-top:12px;text-align:center;">Astuce : regarde l'URL de la page "Carrieres" d'une entreprise. Le domaine revele l'ATS utilise.</p>
+  </div>
+
+  <!-- CHIFFRES CLES -->
+  <div style="max-width:900px;margin:0 auto 60px;">
+    <h3 style="font-size:20px;font-weight:800;margin-bottom:24px;color:var(--accent);">Les chiffres qui font peur</h3>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:16px;">
+      <div style="background:var(--glass);border:1px solid var(--glass-border);border-radius:12px;padding:24px;text-align:center;">
+        <div style="font-size:40px;font-weight:900;background:linear-gradient(135deg,var(--red),#f97316);-webkit-background-clip:text;-webkit-text-fill-color:transparent;">1.1Md</div>
+        <div style="font-size:12px;color:var(--white-50);line-height:1.5;margin-top:8px;">candidatures rejetees par Workday seul (class action en cours aux USA)</div>
+      </div>
+      <div style="background:var(--glass);border:1px solid var(--glass-border);border-radius:12px;padding:24px;text-align:center;">
+        <div style="font-size:40px;font-weight:900;background:linear-gradient(135deg,var(--red),#f97316);-webkit-background-clip:text;-webkit-text-fill-color:transparent;">85%</div>
+        <div style="font-size:12px;color:var(--white-50);line-height:1.5;margin-top:8px;">des noms "a consonance blanche" sont favorises par l'IA vs &lt;10% pour les autres</div>
+      </div>
+      <div style="background:var(--glass);border:1px solid var(--glass-border);border-radius:12px;padding:24px;text-align:center;">
+        <div style="font-size:40px;font-weight:900;background:linear-gradient(135deg,var(--red),#f97316);-webkit-background-clip:text;-webkit-text-fill-color:transparent;">68.5%</div>
+        <div style="font-size:12px;color:var(--white-50);line-height:1.5;margin-top:8px;">des candidats ne savent pas que l'IA a ete utilisee pour les filtrer</div>
+      </div>
+      <div style="background:var(--glass);border:1px solid var(--glass-border);border-radius:12px;padding:24px;text-align:center;">
+        <div style="font-size:40px;font-weight:900;background:linear-gradient(135deg,var(--red),#f97316);-webkit-background-clip:text;-webkit-text-fill-color:transparent;">83%</div>
+        <div style="font-size:12px;color:var(--white-50);line-height:1.5;margin-top:8px;">des entreprises utiliseront le screening IA d'ici fin 2026</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- REGLEMENTATION -->
+  <div style="max-width:900px;margin:0 auto;">
+    <h3 style="font-size:20px;font-weight:800;margin-bottom:16px;color:var(--accent);">Ce que dit la loi en 2026</h3>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px;">
+      <div style="background:rgba(129,140,248,0.08);border:1px solid rgba(129,140,248,0.2);border-radius:12px;padding:20px;">
+        <div style="font-size:14px;font-weight:700;margin-bottom:8px;">AI Act europeen</div>
+        <div style="font-size:12px;color:var(--white-50);line-height:1.6;">Le recrutement IA est classe "haut risque". Obligations de transparence, d'audit et de supervision humaine pour tout systeme qui filtre des CV automatiquement. En vigueur 2026.</div>
+      </div>
+      <div style="background:rgba(129,140,248,0.08);border:1px solid rgba(129,140,248,0.2);border-radius:12px;padding:20px;">
+        <div style="font-size:14px;font-weight:700;margin-bottom:8px;">Colorado AI Act (USA)</div>
+        <div style="font-size:12px;color:var(--white-50);line-height:1.6;">Effectif juin 2026. Oblige les entreprises a prendre des "mesures raisonnables" pour prevenir la discrimination algorithmique dans le recrutement.</div>
+      </div>
+      <div style="background:rgba(129,140,248,0.08);border:1px solid rgba(129,140,248,0.2);border-radius:12px;padding:20px;">
+        <div style="font-size:14px;font-weight:700;margin-bottom:8px;">Class actions en cours</div>
+        <div style="font-size:12px;color:var(--white-50);line-height:1.6;">Workday poursuivi pour discrimination par l'age (1.1Md de candidatures rejetees). iTutorGroup condamne a $365K pour rejet automatique des femmes 55+ et hommes 60+.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- EVOLUTION DES CV : DE VINCI A L'IA -->
 <section class="timeline-section" id="timeline">
   <div class="section">
