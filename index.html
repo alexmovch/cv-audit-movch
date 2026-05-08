@@ -1508,58 +1508,78 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.2/jspdf.umd.min.js"></script>
 <script>
 async function downloadCV(elementId, filename) {
-  const btn = event.target.closest('.download-btn');
-  const originalText = btn.innerHTML;
-  btn.innerHTML = '<svg viewBox="0 0 24 24" style="animation:spin 1s linear infinite"><path d="M12 4V1L8 5l4 4V6c3.31 0 6 2.69 6 6 0 1-.25 1.97-.7 2.8l1.46 1.46C19.54 15.03 20 13.57 20 12c0-4.42-3.58-8-8-8zm0 14c-3.31 0-6-2.69-6-6 0-1 .25-1.97.7-2.8L5.24 7.74C4.46 8.97 4 10.43 4 12c0 4.42 3.58 8 8 8v3l4-4-4-4v3z"/></svg> Generation en cours...';
-  btn.style.pointerEvents = 'none';
-
-  const el = document.getElementById(elementId);
-
-  // Save original styles
-  const origStyle = el.style.cssText;
-
-  // Set exact A4 pixel size (210x297mm at 96dpi ≈ 794x1123px, we use 2x for quality)
-  el.style.width = '794px';
-  el.style.height = '1123px';
-  el.style.aspectRatio = 'auto';
-  el.style.overflow = 'hidden';
-  el.style.position = 'fixed';
-  el.style.top = '0';
-  el.style.left = '-9999px';
-  el.style.zIndex = '-1';
-
-  // Wait for reflow
-  await new Promise(r => setTimeout(r, 200));
+  var btn = event.currentTarget;
+  var originalHTML = btn.innerHTML;
+  btn.innerHTML = 'Generation en cours...';
+  btn.disabled = true;
+  btn.style.opacity = '0.6';
 
   try {
-    const canvas = await html2canvas(el, {
+    var el = document.getElementById(elementId);
+
+    // Clone the element so we don't break the page
+    var clone = el.cloneNode(true);
+    clone.id = '';
+
+    // Force A4 dimensions on clone
+    clone.style.cssText = 'width:794px !important; height:1123px !important; aspect-ratio:auto !important; overflow:hidden !important; position:absolute !important; left:0 !important; top:0 !important; background:#fff !important;';
+
+    // Create offscreen container
+    var container = document.createElement('div');
+    container.style.cssText = 'position:fixed; left:-10000px; top:0; width:794px; height:1123px; overflow:hidden; z-index:-9999;';
+    container.appendChild(clone);
+    document.body.appendChild(container);
+
+    // Convert photo to inline base64 to avoid CORS
+    var photos = clone.querySelectorAll('img');
+    for (var i = 0; i < photos.length; i++) {
+      try {
+        var img = photos[i];
+        var c = document.createElement('canvas');
+        c.width = img.naturalWidth || 120;
+        c.height = img.naturalHeight || 120;
+        var ctx = c.getContext('2d');
+        ctx.drawImage(img, 0, 0);
+        img.src = c.toDataURL('image/png');
+      } catch(e2) {}
+    }
+
+    // Wait for layout
+    await new Promise(function(r) { setTimeout(r, 500); });
+
+    var canvas = await html2canvas(clone, {
       scale: 2,
       useCORS: true,
       allowTaint: true,
       width: 794,
       height: 1123,
-      windowWidth: 794,
-      windowHeight: 1123
+      backgroundColor: '#ffffff',
+      logging: false
     });
 
-    const { jsPDF } = window.jspdf;
-    const pdf = new jsPDF({ orientation: 'portrait', unit: 'mm', format: 'a4' });
-    const imgData = canvas.toDataURL('image/jpeg', 0.95);
+    // Remove clone
+    document.body.removeChild(container);
+
+    var jsPDF = window.jspdf.jsPDF;
+    var pdf = new jsPDF({
+      orientation: 'portrait',
+      unit: 'mm',
+      format: 'a4'
+    });
+
+    var imgData = canvas.toDataURL('image/jpeg', 0.92);
     pdf.addImage(imgData, 'JPEG', 0, 0, 210, 297);
     pdf.save(filename + '.pdf');
-  } catch(e) {
-    console.error(e);
-    alert('Erreur lors de la generation. Essayez avec Chrome.');
+
+  } catch(err) {
+    console.error('PDF error:', err);
+    alert('Erreur : ' + err.message + '\n\nEssaie avec Google Chrome.');
   }
 
-  // Restore
-  el.style.cssText = origStyle;
-  btn.innerHTML = originalText;
-  btn.style.pointerEvents = 'auto';
+  btn.innerHTML = originalHTML;
+  btn.disabled = false;
+  btn.style.opacity = '1';
 }
 </script>
-<style>
-@keyframes spin { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
-</style>
 </body>
 </html>
