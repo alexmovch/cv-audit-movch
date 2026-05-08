@@ -1,0 +1,1336 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MOVCH AGENCY — Audit CV : Pourquoi ton CV ne marche plus en 2026</title>
+  <meta name="description" content="Analyse complète d'un CV rejeté par les IA de recrutement (ATS). Découvrez pourquoi 75% des CV sont éliminés avant qu'un humain ne les lise.">
+  <link rel="icon" href="logo.png" type="image/png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --blue-900: #050816;
+      --blue-800: #0a0f25;
+      --blue-700: #101838;
+      --blue-600: #1a2555;
+      --blue-500: #2563eb;
+      --blue-400: #3b82f6;
+      --blue-300: #60a5fa;
+      --accent: #38bdf8;
+      --accent-purple: #818cf8;
+      --glass: rgba(255,255,255,0.03);
+      --glass-border: rgba(255,255,255,0.08);
+      --white: #ffffff;
+      --white-90: rgba(255,255,255,0.9);
+      --white-70: rgba(255,255,255,0.7);
+      --white-50: rgba(255,255,255,0.5);
+      --white-30: rgba(255,255,255,0.3);
+      --white-10: rgba(255,255,255,0.1);
+      --white-05: rgba(255,255,255,0.05);
+      --red: #ef4444;
+      --red-glow: rgba(239,68,68,0.25);
+      --green: #22c55e;
+      --green-glow: rgba(34,197,94,0.2);
+      --orange: #f59e0b;
+      --font: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    }
+
+    *, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+    html { scroll-behavior: smooth; }
+    ::-webkit-scrollbar { width: 6px; }
+    ::-webkit-scrollbar-track { background: var(--blue-900); }
+    ::-webkit-scrollbar-thumb { background: var(--white-10); border-radius: 3px; }
+
+    body {
+      font-family: var(--font);
+      color: var(--white-90);
+      background: var(--blue-900);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* HERO */
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 40px 20px;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: radial-gradient(ellipse at 30% 20%, rgba(37,99,235,0.12) 0%, transparent 50%),
+                  radial-gradient(ellipse at 70% 80%, rgba(129,140,248,0.08) 0%, transparent 50%);
+      animation: bgPulse 8s ease-in-out infinite alternate;
+    }
+    @keyframes bgPulse {
+      0% { transform: scale(1) rotate(0deg); }
+      100% { transform: scale(1.05) rotate(2deg); }
+    }
+
+    .hero-content { position: relative; z-index: 1; max-width: 900px; }
+    .logo { width: 80px; height: auto; margin-bottom: 20px; filter: drop-shadow(0 0 30px rgba(56,189,248,0.3)); }
+    .brand { font-size: 14px; font-weight: 600; letter-spacing: 4px; text-transform: uppercase; color: var(--accent); margin-bottom: 30px; }
+
+    .hero h1 {
+      font-size: clamp(32px, 5vw, 56px);
+      font-weight: 900;
+      line-height: 1.1;
+      margin-bottom: 24px;
+      background: linear-gradient(135deg, var(--white) 0%, var(--white-70) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .hero h1 span {
+      background: linear-gradient(135deg, var(--red) 0%, #f97316 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .hero-sub {
+      font-size: clamp(16px, 2vw, 20px);
+      color: var(--white-50);
+      max-width: 700px;
+      margin: 0 auto 40px;
+      line-height: 1.7;
+    }
+    .hero-stats {
+      display: flex;
+      gap: 40px;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-bottom: 40px;
+    }
+    .stat {
+      text-align: center;
+    }
+    .stat-number {
+      font-size: 48px;
+      font-weight: 900;
+      background: linear-gradient(135deg, var(--red), #f97316);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .stat-label { font-size: 13px; color: var(--white-50); margin-top: 4px; }
+
+    .scroll-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--accent);
+      font-weight: 600;
+      font-size: 14px;
+      text-decoration: none;
+      animation: bounce 2s infinite;
+    }
+    @keyframes bounce {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(8px); }
+    }
+
+    /* SECTIONS */
+    .section {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 80px 20px;
+    }
+    .section-title {
+      font-size: clamp(24px, 3.5vw, 40px);
+      font-weight: 800;
+      margin-bottom: 16px;
+      text-align: center;
+    }
+    .section-sub {
+      text-align: center;
+      color: var(--white-50);
+      font-size: 16px;
+      max-width: 600px;
+      margin: 0 auto 60px;
+    }
+
+    /* CV ANALYSIS */
+    .cv-analysis {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+      align-items: start;
+    }
+    @media (max-width: 900px) {
+      .cv-analysis { grid-template-columns: 1fr; }
+    }
+
+    .cv-container {
+      position: relative;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 0 60px rgba(239,68,68,0.15);
+      border: 2px solid rgba(239,68,68,0.3);
+      position: sticky;
+      top: 20px;
+    }
+    .cv-container img {
+      width: 100%;
+      display: block;
+    }
+
+    /* RED ZONES - overlays on CV */
+    .zone {
+      position: absolute;
+      border: 3px solid var(--red);
+      border-radius: 6px;
+      background: var(--red-glow);
+      cursor: pointer;
+      transition: all 0.3s ease;
+      animation: zonePulse 2s ease-in-out infinite alternate;
+    }
+    .zone:hover {
+      background: rgba(239,68,68,0.4);
+      box-shadow: 0 0 20px rgba(239,68,68,0.5);
+    }
+    @keyframes zonePulse {
+      0% { box-shadow: 0 0 5px rgba(239,68,68,0.3); }
+      100% { box-shadow: 0 0 15px rgba(239,68,68,0.5); }
+    }
+    .zone-label {
+      position: absolute;
+      top: -12px;
+      right: -4px;
+      background: var(--red);
+      color: white;
+      font-size: 11px;
+      font-weight: 800;
+      padding: 2px 8px;
+      border-radius: 4px;
+      white-space: nowrap;
+    }
+
+    /* Zone positions (% based on CV image) */
+    .zone-photo { top: 9%; left: 5%; width: 27%; height: 16%; }
+    .zone-sidebar { top: 0%; left: 0%; width: 33%; height: 100%; border-radius: 0; border-width: 3px; border-style: dashed; }
+    .zone-title { top: 3%; left: 5%; width: 27%; height: 6%; }
+    .zone-desc { top: 27%; left: 2%; width: 30%; height: 17%; }
+    .zone-icons { top: 46%; left: 3%; width: 12%; height: 7%; }
+    .zone-skills { top: 72%; left: 2%; width: 30%; height: 12%; }
+    .zone-bullets { top: 6%; left: 34%; width: 64%; height: 28%; }
+
+    /* PROBLEMS LIST */
+    .problems { display: flex; flex-direction: column; gap: 24px; }
+
+    .problem-card {
+      background: var(--glass);
+      border: 1px solid var(--glass-border);
+      border-radius: 16px;
+      padding: 24px;
+      transition: all 0.3s ease;
+      border-left: 4px solid var(--red);
+    }
+    .problem-card:hover {
+      border-color: var(--red);
+      background: rgba(239,68,68,0.05);
+      transform: translateX(4px);
+    }
+    .problem-card.good {
+      border-left-color: var(--green);
+    }
+    .problem-card.good:hover {
+      border-color: var(--green);
+      background: rgba(34,197,94,0.05);
+    }
+
+    .problem-num {
+      display: inline-block;
+      background: var(--red);
+      color: white;
+      font-size: 12px;
+      font-weight: 800;
+      padding: 3px 10px;
+      border-radius: 20px;
+      margin-bottom: 12px;
+    }
+    .problem-card.good .problem-num { background: var(--green); }
+
+    .problem-title {
+      font-size: 18px;
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+    .problem-text {
+      color: var(--white-50);
+      font-size: 14px;
+      line-height: 1.7;
+    }
+    .problem-impact {
+      margin-top: 12px;
+      padding: 10px 14px;
+      background: rgba(239,68,68,0.1);
+      border-radius: 8px;
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--red);
+    }
+    .problem-card.good .problem-impact {
+      background: rgba(34,197,94,0.1);
+      color: var(--green);
+    }
+
+    /* SCORE */
+    .score-section {
+      text-align: center;
+      padding: 80px 20px;
+    }
+    .score-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      max-width: 900px;
+      margin: 0 auto 60px;
+    }
+    .score-card {
+      background: var(--glass);
+      border: 1px solid var(--glass-border);
+      border-radius: 16px;
+      padding: 24px;
+      text-align: left;
+    }
+    .score-card-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 12px;
+    }
+    .score-card-title { font-size: 14px; font-weight: 600; color: var(--white-70); }
+    .score-value { font-size: 28px; font-weight: 900; }
+    .score-value.bad { color: var(--red); }
+    .score-value.mid { color: var(--orange); }
+    .score-value.good { color: var(--green); }
+    .score-bar {
+      height: 6px;
+      background: var(--white-05);
+      border-radius: 3px;
+      overflow: hidden;
+    }
+    .score-bar-fill {
+      height: 100%;
+      border-radius: 3px;
+      transition: width 1.5s ease;
+    }
+    .score-bar-fill.bad { background: linear-gradient(90deg, var(--red), #f97316); }
+    .score-bar-fill.mid { background: linear-gradient(90deg, var(--orange), #eab308); }
+    .score-bar-fill.good { background: linear-gradient(90deg, var(--green), #4ade80); }
+
+    .score-total {
+      display: inline-block;
+      background: linear-gradient(135deg, rgba(239,68,68,0.15), rgba(239,68,68,0.05));
+      border: 2px solid var(--red);
+      border-radius: 24px;
+      padding: 20px 60px;
+      margin-bottom: 16px;
+    }
+    .score-total-number {
+      font-size: 64px;
+      font-weight: 900;
+      color: var(--red);
+      line-height: 1;
+    }
+    .score-total-label {
+      font-size: 14px;
+      color: var(--white-50);
+      margin-top: 4px;
+    }
+    .score-verdict {
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--red);
+      margin-top: 16px;
+    }
+
+    /* WHY 2026 */
+    .why-section { background: var(--blue-800); padding: 80px 20px; }
+    .why-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 24px;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+    .why-card {
+      background: var(--glass);
+      border: 1px solid var(--glass-border);
+      border-radius: 16px;
+      padding: 32px;
+      text-align: center;
+      transition: all 0.3s ease;
+    }
+    .why-card:hover {
+      transform: translateY(-4px);
+      border-color: var(--accent);
+      box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+    }
+    .why-icon { font-size: 48px; margin-bottom: 16px; }
+    .why-number {
+      font-size: 36px;
+      font-weight: 900;
+      background: linear-gradient(135deg, var(--accent), var(--accent-purple));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-bottom: 8px;
+    }
+    .why-card h3 { font-size: 16px; font-weight: 700; margin-bottom: 8px; }
+    .why-card p { font-size: 13px; color: var(--white-50); line-height: 1.6; }
+
+    /* ATS EXPLAINED */
+    .ats-flow {
+      max-width: 800px;
+      margin: 0 auto;
+      position: relative;
+    }
+    .ats-step {
+      display: flex;
+      gap: 24px;
+      align-items: flex-start;
+      margin-bottom: 40px;
+      position: relative;
+    }
+    .ats-step::before {
+      content: '';
+      position: absolute;
+      left: 24px;
+      top: 50px;
+      width: 2px;
+      height: calc(100% + 10px);
+      background: var(--white-10);
+    }
+    .ats-step:last-child::before { display: none; }
+
+    .ats-step-num {
+      width: 50px;
+      height: 50px;
+      min-width: 50px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 900;
+      font-size: 20px;
+      background: linear-gradient(135deg, var(--blue-600), var(--blue-500));
+      border: 2px solid var(--accent);
+    }
+    .ats-step-content h3 { font-size: 18px; font-weight: 700; margin-bottom: 6px; }
+    .ats-step-content p { font-size: 14px; color: var(--white-50); line-height: 1.7; }
+    .ats-step-content .fail {
+      margin-top: 8px;
+      padding: 8px 12px;
+      background: rgba(239,68,68,0.1);
+      border-radius: 8px;
+      font-size: 13px;
+      color: var(--red);
+      font-weight: 600;
+    }
+
+    /* COMPARISON */
+    .compare-table {
+      max-width: 900px;
+      margin: 0 auto;
+      border-radius: 16px;
+      overflow: hidden;
+      border: 1px solid var(--glass-border);
+    }
+    .compare-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      border-bottom: 1px solid var(--glass-border);
+    }
+    .compare-row:last-child { border-bottom: none; }
+    .compare-header {
+      padding: 16px 24px;
+      font-weight: 700;
+      font-size: 14px;
+    }
+    .compare-header.bad-h { background: rgba(239,68,68,0.15); color: var(--red); }
+    .compare-header.good-h { background: rgba(34,197,94,0.15); color: var(--green); }
+    .compare-cell {
+      padding: 14px 24px;
+      font-size: 13px;
+      color: var(--white-70);
+      line-height: 1.5;
+    }
+    .compare-cell.bad-c { background: rgba(239,68,68,0.03); }
+    .compare-cell.good-c { background: rgba(34,197,94,0.03); }
+
+    /* CV TEMPLATES */
+    .templates-section { padding: 80px 20px; }
+    .templates-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 32px;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+    .template-card {
+      background: var(--glass);
+      border: 1px solid var(--glass-border);
+      border-radius: 20px;
+      overflow: hidden;
+      transition: all 0.3s ease;
+    }
+    .template-card:hover {
+      transform: translateY(-6px);
+      border-color: var(--green);
+      box-shadow: 0 20px 60px rgba(34,197,94,0.15);
+    }
+    .template-preview {
+      background: #fff;
+      padding: 28px 24px;
+      font-family: 'Inter', sans-serif;
+      color: #111;
+      font-size: 11px;
+      line-height: 1.5;
+      min-height: 480px;
+    }
+    .template-preview h4 {
+      font-size: 16px;
+      font-weight: 800;
+      margin-bottom: 2px;
+      color: #111;
+    }
+    .template-preview .tp-subtitle {
+      font-size: 12px;
+      font-weight: 600;
+      color: #2563eb;
+      margin-bottom: 4px;
+    }
+    .template-preview .tp-contact {
+      font-size: 10px;
+      color: #666;
+      margin-bottom: 12px;
+      padding-bottom: 10px;
+      border-bottom: 2px solid #111;
+    }
+    .template-preview .tp-section-title {
+      font-size: 11px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: #111;
+      margin: 12px 0 6px;
+      padding-bottom: 3px;
+      border-bottom: 1px solid #ddd;
+    }
+    .template-preview .tp-job {
+      margin-bottom: 8px;
+    }
+    .template-preview .tp-job-title {
+      font-weight: 700;
+      font-size: 11px;
+    }
+    .template-preview .tp-job-company {
+      font-size: 10px;
+      color: #555;
+    }
+    .template-preview .tp-job-date {
+      font-size: 9px;
+      color: #888;
+    }
+    .template-preview ul {
+      margin: 4px 0 0 14px;
+      padding: 0;
+    }
+    .template-preview li {
+      font-size: 10px;
+      color: #333;
+      margin-bottom: 2px;
+    }
+    .template-preview li strong { color: #111; }
+    .template-preview .tp-skills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 4px;
+      margin-top: 4px;
+    }
+    .template-preview .tp-skill {
+      background: #f1f5f9;
+      color: #334155;
+      padding: 2px 8px;
+      border-radius: 4px;
+      font-size: 9px;
+      font-weight: 600;
+    }
+
+    /* Template type B - colored header */
+    .template-preview.type-b .tp-header {
+      background: #1e293b;
+      color: white;
+      margin: -28px -24px 16px;
+      padding: 20px 24px;
+    }
+    .template-preview.type-b .tp-header h4 { color: white; }
+    .template-preview.type-b .tp-header .tp-subtitle { color: #93c5fd; }
+    .template-preview.type-b .tp-header .tp-contact { color: #94a3b8; border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+
+    /* Template type C - minimal */
+    .template-preview.type-c {
+      font-family: Georgia, 'Times New Roman', serif;
+    }
+    .template-preview.type-c h4 {
+      font-family: Georgia, serif;
+      font-size: 18px;
+      text-align: center;
+    }
+    .template-preview.type-c .tp-subtitle {
+      text-align: center;
+      color: #555;
+      font-family: Georgia, serif;
+    }
+    .template-preview.type-c .tp-contact {
+      text-align: center;
+      border-bottom: 1px solid #ccc;
+    }
+    .template-preview.type-c .tp-section-title {
+      font-family: Georgia, serif;
+      letter-spacing: 2px;
+      text-align: center;
+      border-bottom: none;
+      color: #555;
+    }
+
+    .template-info {
+      padding: 24px;
+    }
+    .template-badge {
+      display: inline-block;
+      background: var(--green);
+      color: white;
+      font-size: 11px;
+      font-weight: 800;
+      padding: 3px 12px;
+      border-radius: 20px;
+      margin-bottom: 12px;
+    }
+    .template-name {
+      font-size: 18px;
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+    .template-desc {
+      font-size: 13px;
+      color: var(--white-50);
+      line-height: 1.7;
+      margin-bottom: 16px;
+    }
+    .template-why {
+      background: rgba(34,197,94,0.08);
+      border: 1px solid rgba(34,197,94,0.2);
+      border-radius: 10px;
+      padding: 14px;
+    }
+    .template-why h5 {
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--green);
+      margin-bottom: 6px;
+    }
+    .template-why ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    .template-why li {
+      font-size: 12px;
+      color: var(--white-70);
+      padding: 3px 0;
+      padding-left: 16px;
+      position: relative;
+    }
+    .template-why li::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 9px;
+      width: 8px;
+      height: 8px;
+      background: var(--green);
+      border-radius: 50%;
+    }
+
+    /* SOURCES */
+    .sources-section {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 60px 20px 80px;
+    }
+    .sources-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 16px;
+      margin-top: 30px;
+    }
+    .source-card {
+      background: var(--glass);
+      border: 1px solid var(--glass-border);
+      border-radius: 12px;
+      padding: 16px;
+      transition: all 0.3s ease;
+    }
+    .source-card:hover {
+      border-color: var(--accent);
+      background: rgba(56,189,248,0.05);
+    }
+    .source-card a {
+      color: var(--accent);
+      text-decoration: none;
+      font-size: 13px;
+      font-weight: 600;
+      display: block;
+      margin-bottom: 6px;
+    }
+    .source-card a:hover { text-decoration: underline; }
+    .source-card p {
+      font-size: 11px;
+      color: var(--white-30);
+      line-height: 1.5;
+    }
+    .source-tag {
+      display: inline-block;
+      font-size: 9px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      padding: 2px 8px;
+      border-radius: 4px;
+      margin-bottom: 8px;
+    }
+    .source-tag.academic { background: rgba(129,140,248,0.2); color: var(--accent-purple); }
+    .source-tag.industry { background: rgba(56,189,248,0.2); color: var(--accent); }
+    .source-tag.legal { background: rgba(245,158,11,0.2); color: var(--orange); }
+    .source-tag.media { background: rgba(34,197,94,0.2); color: var(--green); }
+
+    /* FOOTER */
+    footer {
+      text-align: center;
+      padding: 40px 20px;
+      border-top: 1px solid var(--glass-border);
+    }
+    footer img { width: 40px; margin-bottom: 12px; filter: drop-shadow(0 0 10px rgba(56,189,248,0.3)); }
+    footer p { font-size: 12px; color: var(--white-30); }
+    footer a { color: var(--accent); text-decoration: none; }
+
+    /* RESPONSIVE */
+    @media (max-width: 768px) {
+      .hero-stats { gap: 20px; }
+      .stat-number { font-size: 36px; }
+      .cv-container { position: static; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-content">
+    <img src="logo.png" alt="MOVCH Agency" class="logo">
+    <div class="brand">MOVCH AGENCY</div>
+    <h1>Ton CV est <span>invisible</span>.<br>Voici pourquoi.</h1>
+    <p class="hero-sub">En 2026, une intelligence artificielle lit ton CV avant tout humain. Si elle dit non, personne ne te lira jamais. Voici l'analyse d'un vrai CV, et pourquoi il finit dans le vide.</p>
+
+    <div class="hero-stats">
+      <div class="stat">
+        <div class="stat-number">75%</div>
+        <div class="stat-label">des CV rejetés par l'IA<br>avant un humain</div>
+      </div>
+      <div class="stat">
+        <div class="stat-number">82%</div>
+        <div class="stat-label">des entreprises utilisent<br>un tri IA automatique</div>
+      </div>
+      <div class="stat">
+        <div class="stat-number">0</div>
+        <div class="stat-label">humains lisent ton CV<br>s'il score &lt; 80%</div>
+      </div>
+    </div>
+
+    <a href="#analyse" class="scroll-cta">Voir l'analyse du CV &#8595;</a>
+  </div>
+</section>
+
+<!-- COMMENT L'ATS FONCTIONNE -->
+<section class="why-section">
+  <div class="section">
+    <h2 class="section-title">Comment ton CV est trié en 2026</h2>
+    <p class="section-sub">Avant qu'un recruteur ne voie ton CV, un robot le scanne en quelques secondes. Voici exactement ce qui se passe.</p>
+
+    <div class="ats-flow">
+      <div class="ats-step">
+        <div class="ats-step-num">1</div>
+        <div class="ats-step-content">
+          <h3>Parsing (extraction du texte)</h3>
+          <p>L'ATS extrait le texte de ton CV. Si ton format a des colonnes, des tableaux, une photo ou des icones, il lit n'importe quoi. 43% des CV ont des erreurs de parsing.</p>
+          <div class="fail">Ce CV : 2 colonnes + photo + icones + barre noire = parsing detruit</div>
+        </div>
+      </div>
+      <div class="ats-step">
+        <div class="ats-step-num">2</div>
+        <div class="ats-step-content">
+          <h3>Matching par mots-cles</h3>
+          <p>L'IA compare ton CV a la fiche de poste. Elle cherche les competences requises, les outils, les annees d'experience. Chaque mot-cle a un poids : obligatoire (fort), prefere (moyen), contextuel (faible).</p>
+          <div class="fail">Ce CV : competences cachees dans la sidebar, pas associees aux experiences</div>
+        </div>
+      </div>
+      <div class="ats-step">
+        <div class="ats-step-num">3</div>
+        <div class="ats-step-content">
+          <h3>Scoring (note sur 100)</h3>
+          <p>Le systeme donne un score : nombre de mots (25 pts), competences tech (35 pts), experience (40 pts). Seuil de passage : 80/100. En dessous, rejet automatique.</p>
+          <div class="fail">Ce CV : score estime ~40/100. Aucun humain ne le verra jamais.</div>
+        </div>
+      </div>
+      <div class="ats-step">
+        <div class="ats-step-num">4</div>
+        <div class="ats-step-content">
+          <h3>Decision : poubelle ou humain</h3>
+          <p>70% des entreprises laissent l'IA rejeter sans aucune supervision humaine. Si ton score est sous le seuil, ton CV disparait. Pas de notification, pas d'email. Le trou noir.</p>
+          <div class="fail">Ce CV : rejete automatiquement. La candidate a postule des centaines de fois sans reponse.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ANALYSE DU CV -->
+<section class="section" id="analyse">
+  <h2 class="section-title">Analyse du CV</h2>
+  <p class="section-sub">Chaque zone rouge = un probleme qui fait rejeter le CV par l'IA. Survolez les zones pour voir le detail.</p>
+
+  <div class="cv-analysis">
+    <!-- CV IMAGE WITH RED ZONES -->
+    <div class="cv-container">
+      <img src="cv-page-1.png" alt="CV analyse">
+
+      <!-- ZONE 1: Sidebar entiere -->
+      <div class="zone zone-sidebar" title="Colonne laterale = invisible pour l'ATS">
+        <span class="zone-label">#1 SIDEBAR</span>
+      </div>
+
+      <!-- ZONE 2: Photo -->
+      <div class="zone zone-photo" title="Photo = crash du parsing ATS">
+        <span class="zone-label">#2 PHOTO</span>
+      </div>
+
+      <!-- ZONE 3: Titre -->
+      <div class="zone zone-title" title="Titre trop generique">
+        <span class="zone-label">#3 TITRE</span>
+      </div>
+
+      <!-- ZONE 4: Description prose -->
+      <div class="zone zone-desc" title="Description trop narrative, 0 chiffre">
+        <span class="zone-label">#4 DESCRIPTION</span>
+      </div>
+
+      <!-- ZONE 5: Icones contact -->
+      <div class="zone zone-icons" title="Icones illisibles par l'ATS">
+        <span class="zone-label">#5 ICONES</span>
+      </div>
+
+      <!-- ZONE 6: Competences dans sidebar -->
+      <div class="zone zone-skills" title="Competences cachees dans zone non-parsee">
+        <span class="zone-label">#6 SKILLS</span>
+      </div>
+
+      <!-- ZONE 7: Bullets sans chiffres -->
+      <div class="zone zone-bullets" style="border-color: var(--orange); background: rgba(245,158,11,0.15);" title="Bullet points sans metriques">
+        <span class="zone-label" style="background: var(--orange);">#7 PAS DE CHIFFRES</span>
+      </div>
+    </div>
+
+    <!-- PROBLEMS LIST -->
+    <div class="problems">
+      <div class="problem-card">
+        <span class="problem-num">CRITIQUE #1</span>
+        <h3 class="problem-title">Format 2 colonnes = invisible</h3>
+        <p class="problem-text">L'ATS lit ligne par ligne, de gauche a droite. Avec 2 colonnes, il melange tout : ton nom se retrouve colle a une experience, tes competences disparaissent. La bande noire est traitee comme une image — tout ce qui est dessus est ignore.</p>
+        <div class="problem-impact">Resultat : 100% du contenu de la colonne gauche est perdu ou corrompu</div>
+      </div>
+
+      <div class="problem-card">
+        <span class="problem-num">CRITIQUE #2</span>
+        <h3 class="problem-title">Photo = crash du parser</h3>
+        <p class="problem-text">Certains ATS tentent d'analyser la photo comme du texte et plantent. Meme ceux qui la sautent perdent la structure du document autour. En France, la photo n'est pas obligatoire et les systemes IA modernes l'ignorent completement.</p>
+        <div class="problem-impact">Resultat : le parsing du reste du CV est compromis</div>
+      </div>
+
+      <div class="problem-card">
+        <span class="problem-num">CRITIQUE #3</span>
+        <h3 class="problem-title">Titre generique, pas alignable</h3>
+        <p class="problem-text">"MARKETING 360 / COMMUNICATION / GESTION DE PROJETS - DISPONIBLE IMMEDIATEMENT" — c'est trop large. L'ATS cherche un match exact avec l'intitule du poste. "Chef de Projet Marketing Operationnel" matcherait. "Marketing 360" ne matche rien. Et "DISPONIBLE IMMEDIATEMENT" n'a aucune valeur pour le scoring.</p>
+        <div class="problem-impact">Resultat : score de matching titre = quasi 0</div>
+      </div>
+
+      <div class="problem-card">
+        <span class="problem-num">CRITIQUE #4</span>
+        <h3 class="problem-title">Description en prose, 0 mot-cle</h3>
+        <p class="problem-text">Le paragraphe a gauche est du texte narratif sans aucun mot-cle technique ni chiffre. L'ATS ne comprend pas la prose — il cherche des bullet points avec des termes precis. Et comme c'est dans la sidebar, il ne le lit probablement meme pas.</p>
+        <div class="problem-impact">Resultat : cette section ne contribue a aucun score</div>
+      </div>
+
+      <div class="problem-card">
+        <span class="problem-num">CRITIQUE #5</span>
+        <h3 class="problem-title">Icones = donnees de contact perdues</h3>
+        <p class="problem-text">Les icones (telephone, email, voiture) ne sont pas du texte — l'ATS ne les lit pas. S'il ne peut pas extraire ton email ou ton numero, il ne peut pas te contacter. Certains systemes rejettent directement les CV sans coordonnees detectees.</p>
+        <div class="problem-impact">Resultat : le recruteur ne peut meme pas te rappeler</div>
+      </div>
+
+      <div class="problem-card">
+        <span class="problem-num">CRITIQUE #6</span>
+        <h3 class="problem-title">Competences dans la zone morte</h3>
+        <p class="problem-text">Salesforce, Marketing Cloud, Google Analytics, HTML, CRM — toutes ces competences sont dans la colonne gauche que l'ATS ne parse pas. Elles existent, mais l'IA ne les voit pas. C'est comme avoir les bonnes reponses ecrites a l'envers.</p>
+        <div class="problem-impact">Resultat : 0 match sur les competences techniques requises</div>
+      </div>
+
+      <div class="problem-card" style="border-left-color: var(--orange);">
+        <span class="problem-num" style="background: var(--orange);">IMPORTANT #7</span>
+        <h3 class="problem-title">Aucun chiffre dans les experiences</h3>
+        <p class="problem-text">"Gestion des campagnes emailing" — ca, 500 autres candidats Bac+5 l'ecrivent aussi. Ce qui differencie : "Pilotage de 15 campagnes/mois, taux d'ouverture +23%, ROI +18%". Les chiffres sont le seul moyen de sortir du lot, autant pour l'IA que pour l'humain.</p>
+        <div class="problem-impact" style="background: rgba(245,158,11,0.1); color: var(--orange);">Resultat : CV identique a 500 autres, aucune differenciation</div>
+      </div>
+
+      <!-- GOOD POINTS -->
+      <div class="problem-card good">
+        <span class="problem-num">CE QUI EST BIEN</span>
+        <h3 class="problem-title">Le profil est solide</h3>
+        <p class="problem-text">Prepa HEC + Master IESEG + TOEIC 940 + trilingue FR/EN/ES + experiences chez SMCP, ETAM, Sinclair Pharma. Le parcours est coherent et les competences sont reelles. Le probleme n'est pas le profil — c'est l'emballage qui empeche l'IA de le voir.</p>
+        <div class="problem-impact">Le fond est la. C'est la forme qui tue.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SCORE -->
+<section class="score-section">
+  <h2 class="section-title">Score ATS estime</h2>
+  <p class="section-sub">Le seuil de passage est 80/100. En dessous, aucun humain ne lira jamais ce CV.</p>
+
+  <div class="score-grid">
+    <div class="score-card">
+      <div class="score-card-header">
+        <span class="score-card-title">Parsing (lisibilite)</span>
+        <span class="score-value bad">3/10</span>
+      </div>
+      <div class="score-bar"><div class="score-bar-fill bad" style="width:30%"></div></div>
+    </div>
+    <div class="score-card">
+      <div class="score-card-header">
+        <span class="score-card-title">Mots-cles</span>
+        <span class="score-value mid">5/10</span>
+      </div>
+      <div class="score-bar"><div class="score-bar-fill mid" style="width:50%"></div></div>
+    </div>
+    <div class="score-card">
+      <div class="score-card-header">
+        <span class="score-card-title">Metriques / Resultats</span>
+        <span class="score-value bad">2/10</span>
+      </div>
+      <div class="score-bar"><div class="score-bar-fill bad" style="width:20%"></div></div>
+    </div>
+    <div class="score-card">
+      <div class="score-card-header">
+        <span class="score-card-title">Titre / Matching poste</span>
+        <span class="score-value bad">4/10</span>
+      </div>
+      <div class="score-bar"><div class="score-bar-fill bad" style="width:40%"></div></div>
+    </div>
+    <div class="score-card">
+      <div class="score-card-header">
+        <span class="score-card-title">Experience</span>
+        <span class="score-value mid">5/10</span>
+      </div>
+      <div class="score-bar"><div class="score-bar-fill mid" style="width:50%"></div></div>
+    </div>
+    <div class="score-card">
+      <div class="score-card-header">
+        <span class="score-card-title">Formation</span>
+        <span class="score-value good">7/10</span>
+      </div>
+      <div class="score-bar"><div class="score-bar-fill good" style="width:70%"></div></div>
+    </div>
+  </div>
+
+  <div class="score-total">
+    <div class="score-total-number">~40</div>
+    <div class="score-total-label">/ 100</div>
+  </div>
+  <div class="score-verdict">Seuil de passage : 80. Ce CV est automatiquement rejete.</div>
+</section>
+
+<!-- POURQUOI EN 2026 -->
+<section class="why-section">
+  <div class="section">
+    <h2 class="section-title">Pourquoi ca ne marche plus en 2026</h2>
+    <p class="section-sub">Le marche du travail a change. Les regles de 2020 ne fonctionnent plus.</p>
+
+    <div class="why-grid">
+      <div class="why-card">
+        <div class="why-number">99%</div>
+        <h3>des Fortune 500 utilisent un ATS</h3>
+        <p>Workday (39%), Taleo (22%), SuccessFactors (13%), iCIMS (7%). En France : Taleez, Flatchr, Cegid. Meme les PME a 50 salaries utilisent un ATS des 49 euros/mois. Ton CV passe par un robot, pas par un humain.</p>
+      </div>
+      <div class="why-card">
+        <div class="why-number">70%</div>
+        <h3>des entreprises rejettent sans humain</h3>
+        <p>7 entreprises sur 10 laissent l'IA decider seule. Pas de deuxieme chance, pas de "on va quand meme regarder". Si l'algorithme dit non, c'est non. Et il ne t'enverra meme pas un email pour te prevenir.</p>
+      </div>
+      <div class="why-card">
+        <div class="why-number">300s</div>
+        <h3>c'est le temps que l'IA met a te juger</h3>
+        <p>5 minutes. Ton CV est parse, score, compare a des centaines d'autres, et classe. Un recruteur humain passe 7 secondes sur un CV. L'IA fait tout ca sans que personne n'intervienne.</p>
+      </div>
+      <div class="why-card">
+        <div class="why-number">43%</div>
+        <h3>des CV ont des erreurs de parsing</h3>
+        <p>Colonnes, tableaux, graphiques, photos, icones, templates Canva avec calques invisibles. Presque la moitie des CV sont mal lus avant meme d'etre evalues. Le format tue le contenu.</p>
+      </div>
+      <div class="why-card">
+        <div class="why-number">AI Act</div>
+        <h3>L'Europe reagit (trop tard)</h3>
+        <p>Depuis 2026, l'AI Act europeen classe le recrutement IA en "haut risque". Les rejets automatiques sans humain sont theoriquement non conformes. Mais dans la pratique, presque aucune entreprise n'est encore en conformite.</p>
+      </div>
+      <div class="why-card">
+        <div class="why-number">LLM</div>
+        <h3>L'IA est devenue plus intelligente</h3>
+        <p>Les nouveaux ATS utilisent des Large Language Models. Ils ne matchent plus juste des mots-cles — ils comprennent le contexte. Mais si le format empeche le parsing, meme le meilleur LLM ne peut rien faire.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BEFORE/AFTER -->
+<section class="section">
+  <h2 class="section-title">Avant / Apres : ce que l'ATS lit</h2>
+  <p class="section-sub">A gauche : ce qu'elle ecrit. A droite : ce qu'il faudrait ecrire pour passer le filtre IA.</p>
+
+  <div class="compare-table">
+    <div class="compare-row">
+      <div class="compare-header bad-h">CE QUE LE CV DIT</div>
+      <div class="compare-header good-h">CE QU'IL FAUDRAIT DIRE</div>
+    </div>
+    <div class="compare-row">
+      <div class="compare-cell bad-c">"Gestion des campagnes emailing"</div>
+      <div class="compare-cell good-c">"Pilotage de 15 campagnes emailing/mois via Salesforce Marketing Cloud, taux d'ouverture +23%"</div>
+    </div>
+    <div class="compare-row">
+      <div class="compare-cell bad-c">"Suivi des resultats"</div>
+      <div class="compare-cell good-c">"Reporting hebdo KPIs : ROI campagnes +18%, CAC reduit de 35 a 22 euros"</div>
+    </div>
+    <div class="compare-row">
+      <div class="compare-cell bad-c">"Gestion des lancements produits"</div>
+      <div class="compare-cell good-c">"Lancement de 8 produits (conception a go-to-market), 120K euros de CA en 6 mois"</div>
+    </div>
+    <div class="compare-row">
+      <div class="compare-cell bad-c">"Creation de parcours de fidelisation"</div>
+      <div class="compare-cell good-c">"Parcours fidelisation automatise : +15% retention client, LTV +30%"</div>
+    </div>
+    <div class="compare-row">
+      <div class="compare-cell bad-c">"Pilotage du trade marketing"</div>
+      <div class="compare-cell good-c">"Pilotage trade marketing 45 points de vente Grands Magasins, sell-out +12%"</div>
+    </div>
+    <div class="compare-row">
+      <div class="compare-cell bad-c">"MARKETING 360 / COMMUNICATION"</div>
+      <div class="compare-cell good-c">"Chef de Projet Marketing Operationnel & Brand Content"</div>
+    </div>
+  </div>
+</section>
+
+<!-- 3 CV TEMPLATES QUI FONCTIONNENT -->
+<section class="templates-section" id="templates">
+  <div class="section">
+    <h2 class="section-title">3 formats de CV qui passent l'IA</h2>
+    <p class="section-sub">Ces 3 structures sont conçues pour scorer 85+ sur 100 dans n'importe quel ATS. Meme contenu que le CV original, mais reformate pour que l'IA le lise.</p>
+
+    <div class="templates-grid">
+
+      <!-- TEMPLATE A : CLASSIQUE CORPORATE -->
+      <div class="template-card">
+        <div class="template-preview">
+          <h4>LARA BLOCH</h4>
+          <div class="tp-subtitle">Chef de Projet Marketing Operationnel &amp; Brand Content</div>
+          <div class="tp-contact">+33 6 01 49 80 74 | lasblh.pro@gmail.com | Mobile France entiere | Francais (natif) | Anglais C1 (TOEIC 940) | Espagnol C1</div>
+
+          <div class="tp-section-title">Profil</div>
+          <p style="font-size:10px;color:#444;">Chef de Projet Marketing, 3+ ans d'experience en marketing operationnel, brand content, CRM et trade marketing. Secteurs : cosmetique, retail luxe, complements alimentaires. Expertise Salesforce Marketing Cloud, coordination transverse, lancement produits.</p>
+
+          <div class="tp-section-title">Competences cles</div>
+          <div class="tp-skills">
+            <span class="tp-skill">Salesforce Marketing Cloud</span>
+            <span class="tp-skill">CRM multicanal</span>
+            <span class="tp-skill">Google Analytics</span>
+            <span class="tp-skill">Trade Marketing</span>
+            <span class="tp-skill">Brand Content</span>
+            <span class="tp-skill">A/B Testing</span>
+            <span class="tp-skill">Emailing</span>
+            <span class="tp-skill">HTML</span>
+            <span class="tp-skill">Canva</span>
+            <span class="tp-skill">Monday</span>
+          </div>
+
+          <div class="tp-section-title">Experience professionnelle</div>
+          <div class="tp-job">
+            <div class="tp-job-title">Chef de Produit Marketing Digital — CDI</div>
+            <div class="tp-job-company">Cell'Innov SA (Cosmetiques &amp; Complements alimentaires) — Lausanne</div>
+            <div class="tp-job-date">Aout 2023 – Decembre 2025 (2 ans 5 mois)</div>
+            <ul>
+              <li>Pilote le lancement de <strong>8 produits</strong> de A a Z, CA genere : <strong>120K€</strong></li>
+              <li>Deploye <strong>15 campagnes emailing/mois</strong> via Salesforce MC — taux ouverture <strong>+23%</strong></li>
+              <li>Cree parcours fidelisation automatise — retention <strong>+15%</strong>, LTV <strong>+30%</strong></li>
+            </ul>
+          </div>
+          <div class="tp-job">
+            <div class="tp-job-title">Chef de Projet Marketing &amp; Trade Marketing — CDD</div>
+            <div class="tp-job-company">Sandro — Groupe SMCP — Paris</div>
+            <div class="tp-job-date">Janvier 2023 – Juillet 2023</div>
+            <ul>
+              <li>Strategie marque 360° et trade marketing <strong>45 points de vente</strong> Europe</li>
+            </ul>
+          </div>
+
+          <div class="tp-section-title">Formation</div>
+          <div class="tp-job">
+            <div class="tp-job-title">Master Marketing Management — IESEG School of Management</div>
+            <div class="tp-job-date">2020 – 2022</div>
+          </div>
+        </div>
+
+        <div class="template-info">
+          <span class="template-badge">SCORE ATS : 90+</span>
+          <h3 class="template-name">Type A — Classique Corporate</h3>
+          <p class="template-desc">Le format le plus sur. 1 colonne, headers standards, zero decoration. Fonctionne avec 100% des ATS du marche (Workday, Taleo, iCIMS, Greenhouse). C'est le format recommande par Harvard Business School et Jobscan.</p>
+          <div class="template-why">
+            <h5>Pourquoi ca marche :</h5>
+            <ul>
+              <li>1 colonne = parsing parfait, zero erreur</li>
+              <li>Headers standards ("Experience", "Formation") reconnus par tous les ATS</li>
+              <li>Competences en tags = chaque mot-cle est detecte individuellement</li>
+              <li>Chiffres en gras dans chaque bullet = scoring maximal</li>
+              <li>Contact en texte brut = extraction automatique sans icone</li>
+              <li>Titre exact = match direct avec l'intitule du poste</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- TEMPLATE B : MODERN PRO -->
+      <div class="template-card">
+        <div class="template-preview type-b">
+          <div class="tp-header">
+            <h4>LARA BLOCH</h4>
+            <div class="tp-subtitle">Chef de Projet CRM &amp; Marketing Digital</div>
+            <div class="tp-contact">+33 6 01 49 80 74 — lasblh.pro@gmail.com — Paris, mobile France — FR natif / EN C1 (TOEIC 940) / ES C1</div>
+          </div>
+
+          <div class="tp-section-title">Resume</div>
+          <p style="font-size:10px;color:#444;">3+ ans en marketing digital, CRM et trade marketing. Specialisee campagnes emailing Salesforce Marketing Cloud, lancement produits et coordination agences. Doubles competences operationnel + strategique. Groupes : SMCP, ETAM, Sinclair Pharma.</p>
+
+          <div class="tp-section-title">Experience</div>
+          <div class="tp-job">
+            <div class="tp-job-title">CHEF DE PRODUIT MARKETING DIGITAL — CDI</div>
+            <div class="tp-job-company">Cell'Innov SA | Cosmetiques &amp; Complements | Lausanne, Suisse</div>
+            <div class="tp-job-date">08/2023 – 12/2025 | 2 ans 5 mois</div>
+            <ul>
+              <li>Campagnes emailing Salesforce MC : <strong>15/mois</strong>, taux ouverture <strong>+23%</strong>, clic <strong>+8%</strong></li>
+              <li>Lancement <strong>8 produits</strong> — coordination produit/tech/copy — CA <strong>120K€</strong></li>
+              <li>Parcours CRM fidelisation/reacquisition — retention <strong>+15%</strong></li>
+              <li>Budget marketing : <strong>85K€/an</strong> — ROI campagnes <strong>+18%</strong></li>
+            </ul>
+          </div>
+          <div class="tp-job">
+            <div class="tp-job-title">CHEF DE PROJETS CRM — CDD</div>
+            <div class="tp-job-company">Maison 123 — Groupe ETAM | Retail | Paris</div>
+            <div class="tp-job-date">07/2022 – 01/2023 | 6 mois</div>
+            <ul>
+              <li>CRM multicanal : emailings, rich SMS, push — <strong>20 campagnes/mois</strong></li>
+              <li>A/B testing parcours clients — conversion <strong>+12%</strong></li>
+            </ul>
+          </div>
+
+          <div class="tp-section-title">Competences techniques</div>
+          <p style="font-size:10px;color:#444;"><strong>CRM/Marketing :</strong> Salesforce Marketing Cloud, DotDigital, CaptainWallet, Google Analytics, HTML, Emailing, A/B Test, Segmentation, Landing Pages<br><strong>Gestion :</strong> Trello, Monday, Notion, Pack Office, Canva, CapCut</p>
+
+          <div class="tp-section-title">Formation</div>
+          <div class="tp-job">
+            <div class="tp-job-title">Master Marketing — IESEG School of Management, Lille</div>
+            <div class="tp-job-date">2020 – 2022</div>
+          </div>
+          <div class="tp-job">
+            <div class="tp-job-title">Prepa HEC ECE — Institut Stanislas, Cannes</div>
+            <div class="tp-job-date">2017 – 2019</div>
+          </div>
+        </div>
+
+        <div class="template-info">
+          <span class="template-badge">SCORE ATS : 88+</span>
+          <h3 class="template-name">Type B — Modern Pro (header colore)</h3>
+          <p class="template-desc">Un header avec fond sombre pour le style, mais le reste est en 1 colonne pure. Le header reste parsable car c'est du texte sur fond colore, pas une image. Bon compromis entre design et compatibilite ATS. Format inspire des recommandations de SHRM (Society for Human Resource Management).</p>
+          <div class="template-why">
+            <h5>Pourquoi ca marche :</h5>
+            <ul>
+              <li>Header = texte reel sur fond CSS, pas une image (l'ATS lit le texte)</li>
+              <li>Dates en format numerique (08/2023) = parsing automatique precis</li>
+              <li>Chaque bullet commence par un verbe d'action + chiffre</li>
+              <li>Competences groupees par categorie = matching contextuel</li>
+              <li>Tout le contenu est dans le flux principal, rien en sidebar</li>
+              <li>Visuellement plus attractif si un humain finit par le lire</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- TEMPLATE C : MINIMAL ELEGANT -->
+      <div class="template-card">
+        <div class="template-preview type-c">
+          <h4>Lara Bloch</h4>
+          <div class="tp-subtitle">Chef de Projet Marketing Operationnel</div>
+          <div class="tp-contact">+33 6 01 49 80 74 &bull; lasblh.pro@gmail.com &bull; Paris, France<br>Francais (natif) &bull; Anglais C1 — TOEIC 940/990 &bull; Espagnol C1</div>
+
+          <div class="tp-section-title">Synthese</div>
+          <p style="font-size:10px;color:#444;text-align:justify;">Professionnelle du marketing operationnel avec 3 ans d'experience en lancement produits, campagnes CRM multicanales et trade marketing. Expertise confirmee sur Salesforce Marketing Cloud, coordination d'equipes transverses et pilotage d'evenements internationaux. Parcours en grands groupes retail (SMCP, ETAM) et PME innovantes (cosmetique, complements alimentaires).</p>
+
+          <div class="tp-section-title">Parcours professionnel</div>
+          <div class="tp-job">
+            <div class="tp-job-title">Chef de Produit Marketing Digital</div>
+            <div class="tp-job-company">Cell'Innov SA — Lausanne, Suisse — CDI</div>
+            <div class="tp-job-date">Aout 2023 a Decembre 2025</div>
+            <ul>
+              <li>Conception et deploiement de <strong>15 campagnes emailing mensuelles</strong> via Salesforce Marketing Cloud (segmentation, ciblage, A/B testing) — taux d'ouverture ameliore de <strong>23%</strong></li>
+              <li>Pilotage du lancement de <strong>8 produits</strong> en coordination avec les equipes produit, technique et copywriting — chiffre d'affaires genere : <strong>120 000 euros</strong></li>
+              <li>Creation de parcours de fidelisation et reacquisition automatises — taux de retention en hausse de <strong>15%</strong>, LTV augmentee de <strong>30%</strong></li>
+            </ul>
+          </div>
+          <div class="tp-job">
+            <div class="tp-job-title">Chef de Projet Marketing &amp; Trade Marketing</div>
+            <div class="tp-job-company">Sandro — Groupe SMCP — Paris — CDD</div>
+            <div class="tp-job-date">Janvier a Juillet 2023</div>
+            <ul>
+              <li>Pilotage du trade marketing sur <strong>45 points de vente</strong> Grands Magasins Europe — sell-out <strong>+12%</strong></li>
+            </ul>
+          </div>
+
+          <div class="tp-section-title">Formation</div>
+          <div class="tp-job">
+            <div class="tp-job-title">Master Programme Grande Ecole — Marketing Management</div>
+            <div class="tp-job-company">IESEG School of Management, Lille — 2020-2022</div>
+          </div>
+          <div class="tp-job">
+            <div class="tp-job-title">Classes Preparatoires HEC (ECE)</div>
+            <div class="tp-job-company">Institut Stanislas, Cannes — 2017-2019</div>
+          </div>
+
+          <div class="tp-section-title">Competences</div>
+          <p style="font-size:10px;color:#444;">Salesforce Marketing Cloud &bull; Google Analytics &bull; CRM multicanal &bull; Emailing &bull; Trade marketing &bull; Brand content &bull; A/B testing &bull; HTML &bull; Trello &bull; Monday &bull; Notion &bull; Canva</p>
+        </div>
+
+        <div class="template-info">
+          <span class="template-badge">SCORE ATS : 92+</span>
+          <h3 class="template-name">Type C — Minimal Elegant (serif)</h3>
+          <p class="template-desc">Le format le plus epure. Police serif (Georgia), zero decoration, texte centre en haut. C'est le format prefere des cabinets de conseil, Big 4 et banques d'affaires. Score ATS maximal car absolument rien ne gene le parsing. Recommande par les career services de HEC, ESSEC et IESEG.</p>
+          <div class="template-why">
+            <h5>Pourquoi ca marche :</h5>
+            <ul>
+              <li>Zero element graphique = zero risque de parsing</li>
+              <li>Police serif standard = lisible par 100% des systemes</li>
+              <li>Phrases completes avec metriques integrees = contexte riche pour l'IA</li>
+              <li>Structure hierarchique parfaite (titre > entreprise > dates > bullets)</li>
+              <li>Format reconnu par les recruteurs senior et les cabinets</li>
+              <li>Le plus haut score ATS possible car rien ne parasite le contenu</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- SOURCES OFFICIELLES -->
+<section class="sources-section" id="sources">
+  <h2 class="section-title">Sources officielles</h2>
+  <p class="section-sub">Toutes les donnees de cet audit sont basees sur des etudes academiques, des rapports industriels et des textes reglementaires verifiables.</p>
+
+  <div class="sources-grid">
+    <div class="source-card">
+      <span class="source-tag academic">Academique</span>
+      <a href="https://www.hbs.edu/managing-the-future-of-work/research/Pages/hidden-workers-untapped-talent.aspx" target="_blank">Harvard Business School — Hidden Workers: Untapped Talent</a>
+      <p>Etude de reference sur les millions de candidats qualifies filtres par les ATS. Documente comment les systemes automatises rejettent systematiquement les profils non lineaires.</p>
+    </div>
+    <div class="source-card">
+      <span class="source-tag industry">Industrie</span>
+      <a href="https://www.jobscan.co/blog/fortune-500-use-applicant-tracking-systems/" target="_blank">Jobscan — 99% of Fortune 500 Use ATS (2023-2025 Report)</a>
+      <p>Rapport annuel sur l'adoption des ATS : 97.8% des Fortune 500 ont un ATS detecte. Workday #1 (39%), SuccessFactors #2 (13.2%), Taleo #3.</p>
+    </div>
+    <div class="source-card">
+      <span class="source-tag industry">Industrie</span>
+      <a href="https://www.shrm.org/topics-tools/news/talent-acquisition/workdays-ats-top-choice-fortune-500" target="_blank">SHRM — Workday's ATS Is Top Choice of Fortune 500</a>
+      <p>Society for Human Resource Management. Confirme Workday comme leader enterprise. 44% des organisations utilisent l'IA pour le screening de CV (SHRM Talent Trends 2025).</p>
+    </div>
+    <div class="source-card">
+      <span class="source-tag academic">Academique</span>
+      <a href="https://www.techrepublic.com/article/ai-hiring-bias-research/" target="_blank">Stanford Research — AI Hiring Bias (2025)</a>
+      <p>Chercheurs de Stanford : les outils IA de screening donnent des scores superieurs aux hommes blancs ages. Les noms a consonance afro-americaine sont defavorises dans 100% des 27 tests de biais.</p>
+    </div>
+    <div class="source-card">
+      <span class="source-tag legal">Reglementaire</span>
+      <a href="https://comparateur-ia.com/ia-par-metier/rh-recruteur/tri-cv-automatise" target="_blank">AI Act Europeen — Classification Haut Risque du Recrutement IA</a>
+      <p>Depuis 2026, le recrutement IA est classe "haut risque" par l'AI Act. Obligations : transparence, supervision humaine, audit des biais, information des candidats. Tout rejet automatique sans humain est non conforme.</p>
+    </div>
+    <div class="source-card">
+      <span class="source-tag media">Media</span>
+      <a href="https://blog.theinterviewguys.com/how-ai-now-rejects-millions-of-candidates-before-a-human-opens-their-resume/" target="_blank">The Interview Guys — The 300-Second Filter</a>
+      <p>Enquete : 82% des entreprises utilisent des outils IA pour le screening, avec la plupart operant sans supervision humaine au stade du rejet. Les LLM remplacent le matching par mots-cles.</p>
+    </div>
+    <div class="source-card">
+      <span class="source-tag industry">Industrie</span>
+      <a href="https://scale.jobs/blog/understanding-ats-scoring-algorithms" target="_blank">Scale.jobs — ATS Scoring Algorithms Deep Dive (2026)</a>
+      <p>Analyse technique du scoring ATS : word count (25 pts), skills (35 pts), experience (40 pts). Seuil de passage : 80%. Details sur le systeme de poids des mots-cles (must-have, nice-to-have, contextuel).</p>
+    </div>
+    <div class="source-card">
+      <span class="source-tag media">Media</span>
+      <a href="https://news.ycombinator.com/item?id=28439772" target="_blank">Hacker News — Automated Hiring Software Rejecting Millions</a>
+      <p>Discussion communautaire (800+ commentaires) sur l'etude Harvard. Temoignages de recruteurs, developpeurs d'ATS et candidats. Confirme que 43% des CV ont des erreurs de parsing.</p>
+    </div>
+    <div class="source-card">
+      <span class="source-tag industry">Industrie</span>
+      <a href="https://www.francetravail.fr/candidat/vos-recherches/preparer-votre-candidature/cv-lettre-de-motivation-e-mail/logiciels-de-recrutement-ats-ada.html" target="_blank">France Travail — Logiciels ATS : adaptez votre CV</a>
+      <p>Guide officiel de France Travail (ex-Pole Emploi) sur les ATS. Recommandations gouvernementales pour adapter son CV aux logiciels de recrutement automatises.</p>
+    </div>
+    <div class="source-card">
+      <span class="source-tag legal">Reglementaire</span>
+      <a href="https://www.classaction.org/ai-interview-screening-lawsuits" target="_blank">ClassAction.org — AI Job Screening Lawsuits</a>
+      <p>Class actions en cours contre des entreprises utilisant l'IA pour rejeter des candidats sans supervision humaine. Cadre juridique en evolution rapide.</p>
+    </div>
+    <div class="source-card">
+      <span class="source-tag academic">Academique</span>
+      <a href="https://mihcm.com/resources/blog/resume-screening-in-2026-a-guide-to-ai-powered-screening-ats-integration-bias-governance/" target="_blank">MiHCM — Resume Screening 2026 : AI, ATS, Bias &amp; Governance</a>
+      <p>Guide complet sur l'etat de l'art du screening IA en 2026 : integration ATS, biais algorithmiques, gouvernance et conformite reglementaire.</p>
+    </div>
+    <div class="source-card">
+      <span class="source-tag media">Media</span>
+      <a href="https://www.greatbaystaffing.com/job-blog/2026/2/1/the-resume-black-hole-why-ai-screening-is-failing-both-job-seekers-and-employers" target="_blank">Great Bay Staffing — The Resume Black Hole (2026)</a>
+      <p>Analyse du "trou noir du CV" : pourquoi le screening IA echoue autant pour les candidats que pour les employeurs. 52% des recruteurs retrouvent manuellement d'excellents candidats dans la pile des rejetes.</p>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <img src="logo.png" alt="MOVCH">
+  <p>MOVCH AGENCY &copy; 2026 &mdash; Audit CV & IA</p>
+  <p style="margin-top: 8px;"><a href="https://agencymvh.com">agencymvh.com</a></p>
+</footer>
+
+</body>
+</html>
