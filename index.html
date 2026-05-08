@@ -771,11 +771,247 @@
     footer p { font-size: 12px; color: var(--white-30); }
     footer a { color: var(--accent); text-decoration: none; }
 
+    /* SCANNER RESULTS */
+    .scanner-section { background: var(--blue-800); padding: 80px 20px; }
+    .scanner-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 16px;
+      max-width: 900px;
+      margin: 0 auto 40px;
+    }
+    .scanner-card {
+      background: var(--glass);
+      border: 1px solid var(--glass-border);
+      border-radius: 14px;
+      padding: 20px;
+      text-align: center;
+      transition: all 0.3s ease;
+    }
+    .scanner-card:hover { border-color: var(--red); }
+    .scanner-card .platform-name { font-size: 14px; font-weight: 700; color: var(--white-70); margin-bottom: 8px; }
+    .scanner-card .platform-score { font-size: 36px; font-weight: 900; color: var(--red); }
+    .scanner-card .platform-verdict { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; color: var(--red); margin-top: 4px; }
+    .scanner-detail {
+      max-width: 900px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 16px;
+    }
+    .scanner-detail-card {
+      background: var(--glass);
+      border: 1px solid var(--glass-border);
+      border-radius: 14px;
+      padding: 20px;
+    }
+    .scanner-detail-card h4 { font-size: 14px; font-weight: 700; margin-bottom: 10px; color: var(--white-90); }
+    .scanner-detail-card .detail-item {
+      font-size: 12px;
+      color: var(--white-50);
+      padding: 4px 0;
+      border-bottom: 1px solid var(--white-05);
+    }
+    .scanner-detail-card .detail-item:last-child { border-bottom: none; }
+    .scanner-detail-card .detail-bad { color: var(--red); }
+    .scanner-detail-card .detail-good { color: var(--green); }
+
+    /* CV EXAMPLES */
+    .examples-section { padding: 80px 20px; }
+    .examples-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 32px;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+    .example-card {
+      background: var(--glass);
+      border: 1px solid var(--glass-border);
+      border-radius: 16px;
+      overflow: hidden;
+      transition: all 0.3s ease;
+    }
+    .example-card:hover { transform: translateY(-4px); }
+    .example-card.bad-example { border-left: 4px solid var(--red); }
+    .example-card.good-example { border-left: 4px solid var(--green); }
+    .example-content {
+      padding: 24px;
+      background: #fff;
+      color: #111;
+      font-size: 11px;
+      line-height: 1.5;
+      min-height: 320px;
+      font-family: 'Inter', sans-serif;
+    }
+    .example-info { padding: 20px; }
+    .example-badge {
+      display: inline-block;
+      font-size: 11px;
+      font-weight: 800;
+      padding: 3px 12px;
+      border-radius: 20px;
+      margin-bottom: 10px;
+    }
+    .example-badge.bad { background: var(--red); color: white; }
+    .example-badge.good { background: var(--green); color: white; }
+    .example-title { font-size: 16px; font-weight: 700; margin-bottom: 8px; }
+    .example-desc { font-size: 13px; color: var(--white-50); line-height: 1.6; }
+    .example-errors {
+      margin-top: 12px;
+      padding: 10px 14px;
+      border-radius: 8px;
+      font-size: 12px;
+      line-height: 1.7;
+    }
+    .example-errors.bad { background: rgba(239,68,68,0.1); color: var(--red); }
+    .example-errors.good { background: rgba(34,197,94,0.1); color: var(--green); }
+
+    /* TIMELINE */
+    .timeline-section { background: var(--blue-800); padding: 80px 20px; }
+    .timeline {
+      max-width: 800px;
+      margin: 0 auto;
+      position: relative;
+    }
+    .timeline::before {
+      content: '';
+      position: absolute;
+      left: 50%;
+      top: 0;
+      bottom: 0;
+      width: 2px;
+      background: var(--white-10);
+      transform: translateX(-50%);
+    }
+    .timeline-item {
+      display: flex;
+      align-items: flex-start;
+      margin-bottom: 40px;
+      position: relative;
+    }
+    .timeline-item:nth-child(odd) { flex-direction: row; }
+    .timeline-item:nth-child(even) { flex-direction: row-reverse; }
+    .timeline-date {
+      width: 45%;
+      text-align: right;
+      padding-right: 30px;
+      font-size: 14px;
+      font-weight: 800;
+      color: var(--accent);
+    }
+    .timeline-item:nth-child(even) .timeline-date {
+      text-align: left;
+      padding-right: 0;
+      padding-left: 30px;
+    }
+    .timeline-dot {
+      position: absolute;
+      left: 50%;
+      top: 4px;
+      width: 14px;
+      height: 14px;
+      background: var(--accent);
+      border-radius: 50%;
+      transform: translateX(-50%);
+      border: 3px solid var(--blue-800);
+      z-index: 1;
+    }
+    .timeline-content {
+      width: 45%;
+      padding-left: 30px;
+    }
+    .timeline-item:nth-child(even) .timeline-content {
+      padding-left: 0;
+      padding-right: 30px;
+    }
+    .timeline-content h4 { font-size: 14px; font-weight: 700; margin-bottom: 4px; }
+    .timeline-content p { font-size: 12px; color: var(--white-50); line-height: 1.6; }
+
     /* RESPONSIVE */
     @media (max-width: 768px) {
       .hero-stats { gap: 20px; }
       .stat-number { font-size: 36px; }
       .cv-container { position: static; }
+      .section { padding: 50px 16px; }
+      .section-title { font-size: clamp(20px, 5vw, 32px); }
+      .section-sub { font-size: 14px; margin-bottom: 30px; }
+
+      /* Scanner mobile */
+      .scanner-grid { grid-template-columns: repeat(2, 1fr); gap: 10px; }
+      .scanner-card .platform-score { font-size: 28px; }
+      .scanner-detail { grid-template-columns: 1fr; }
+
+      /* Problems mobile */
+      .problem-card { padding: 16px; }
+      .problem-title { font-size: 16px; }
+      .problem-text { font-size: 13px; }
+
+      /* Score mobile */
+      .score-grid { grid-template-columns: 1fr 1fr; gap: 12px; }
+      .score-total { padding: 16px 40px; }
+      .score-total-number { font-size: 48px; }
+
+      /* Why cards mobile */
+      .why-grid { grid-template-columns: 1fr; gap: 16px; }
+      .why-card { padding: 24px; }
+      .why-number { font-size: 28px; }
+
+      /* Compare table mobile */
+      .compare-row { grid-template-columns: 1fr; }
+      .compare-cell { font-size: 12px; padding: 10px 16px; }
+      .compare-header { padding: 12px 16px; font-size: 13px; }
+
+      /* Templates mobile */
+      .templates-grid { grid-template-columns: 1fr; gap: 24px; }
+      .template-preview { padding: 24px 20px; font-size: 10px; }
+      .template-preview h4 { font-size: 14px; }
+      .template-preview .tp-photo { width: 45px; height: 45px; min-width: 45px; }
+      .template-preview .tp-subtitle { font-size: 11px; }
+      .template-preview .tp-contact { font-size: 9px; }
+      .template-preview .tp-section-title { font-size: 10px; }
+      .template-preview .tp-skill { font-size: 8px; padding: 2px 6px; }
+      .template-preview li { font-size: 9px; }
+      .template-preview.type-b .tp-header { margin: -24px -20px 12px; padding: 20px; }
+      .template-info { padding: 16px; }
+      .template-name { font-size: 16px; }
+      .download-btn { font-size: 13px; padding: 10px 20px; }
+
+      /* Examples mobile */
+      .examples-grid { grid-template-columns: 1fr; }
+      .example-content { min-height: 200px; padding: 16px; font-size: 10px; }
+
+      /* Timeline mobile */
+      .timeline::before { left: 20px; }
+      .timeline-item, .timeline-item:nth-child(even) { flex-direction: column; padding-left: 44px; }
+      .timeline-date, .timeline-item:nth-child(even) .timeline-date { width: 100%; text-align: left; padding: 0; margin-bottom: 4px; }
+      .timeline-dot { left: 20px; }
+      .timeline-content, .timeline-item:nth-child(even) .timeline-content { width: 100%; padding: 0; }
+
+      /* Sources mobile */
+      .sources-grid { grid-template-columns: 1fr; gap: 12px; }
+      .source-card { padding: 14px; }
+
+      /* ATS flow mobile */
+      .ats-step { gap: 16px; }
+      .ats-step-num { width: 40px; height: 40px; min-width: 40px; font-size: 16px; }
+      .ats-step-content h3 { font-size: 16px; }
+      .ats-step-content p { font-size: 13px; }
+
+      /* Footer mobile */
+      footer { padding: 30px 16px; }
+    }
+
+    @media (max-width: 480px) {
+      .hero { padding: 30px 16px; min-height: 90vh; }
+      .logo { width: 60px; }
+      .brand { font-size: 12px; letter-spacing: 3px; }
+      .hero-sub { font-size: 14px; }
+      .stat-number { font-size: 28px; }
+      .stat-label { font-size: 11px; }
+      .scanner-grid { grid-template-columns: 1fr 1fr; }
+      .score-grid { grid-template-columns: 1fr; }
+      .zone-label { font-size: 9px; padding: 2px 5px; }
     }
   </style>
 </head>
@@ -969,7 +1205,7 @@
     <div class="score-card">
       <div class="score-card-header">
         <span class="score-card-title">Parsing (lisibilite)</span>
-        <span class="score-value bad">3/10</span>
+        <span class="score-value bad">3.0/10</span>
       </div>
       <div class="score-bar"><div class="score-bar-fill bad" style="width:30%"></div></div>
     </div>
@@ -1011,10 +1247,94 @@
   </div>
 
   <div class="score-total">
-    <div class="score-total-number">~40</div>
+    <div class="score-total-number">48</div>
     <div class="score-total-label">/ 100</div>
   </div>
-  <div class="score-verdict">Seuil de passage : 80. Ce CV est automatiquement rejete.</div>
+  <div class="score-verdict">Seuil de passage : 80. Ce CV est automatiquement rejete par tous les ATS.</div>
+</section>
+
+<!-- RESULTATS SCANNER ATS MOVCH -->
+<section class="scanner-section" id="scanner">
+  <div class="section">
+    <h2 class="section-title">Resultats du Scanner ATS MOVCH</h2>
+    <p class="section-sub">Scan reel effectue par notre outil maison. Voici comment ce CV score sur chaque plateforme ATS majeure.</p>
+
+    <div class="scanner-grid">
+      <div class="scanner-card">
+        <div class="platform-name">Workday</div>
+        <div class="platform-score">48</div>
+        <div class="platform-verdict">Rejete</div>
+      </div>
+      <div class="scanner-card">
+        <div class="platform-name">Taleo</div>
+        <div class="platform-score">50</div>
+        <div class="platform-verdict">Rejete</div>
+      </div>
+      <div class="scanner-card">
+        <div class="platform-name">iCIMS</div>
+        <div class="platform-score">48</div>
+        <div class="platform-verdict">Rejete</div>
+      </div>
+      <div class="scanner-card">
+        <div class="platform-name">Greenhouse</div>
+        <div class="platform-score">42</div>
+        <div class="platform-verdict">Rejete</div>
+      </div>
+      <div class="scanner-card">
+        <div class="platform-name">Lever</div>
+        <div class="platform-score">46</div>
+        <div class="platform-verdict">Rejete</div>
+      </div>
+      <div class="scanner-card">
+        <div class="platform-name">SuccessFactors</div>
+        <div class="platform-score">46</div>
+        <div class="platform-verdict">Rejete</div>
+      </div>
+    </div>
+
+    <div class="scanner-detail">
+      <div class="scanner-detail-card">
+        <h4>Format / Parsing — 30/100</h4>
+        <div class="detail-item detail-bad">-15 pts : Images detectees (photo/icones)</div>
+        <div class="detail-item detail-bad">-20 pts : Tableaux detectes (colonnes melangees)</div>
+        <div class="detail-item detail-bad">-10 pts : 3 pages (max recommande : 1-2)</div>
+        <div class="detail-item detail-bad">-15 pts : Email non detecte (cache dans icone)</div>
+        <div class="detail-item detail-bad">-10 pts : Telephone non detecte</div>
+      </div>
+      <div class="scanner-detail-card">
+        <h4>Mots-cles — 75/100</h4>
+        <div class="detail-item detail-good">10 competences techniques detectees</div>
+        <div class="detail-item">trade marketing, ux, brand content, retail, e-commerce, ui, sem, roi, crm</div>
+        <div class="detail-item detail-bad">Competences dans la sidebar = non-parsees par la plupart des ATS</div>
+      </div>
+      <div class="scanner-detail-card">
+        <h4>Sections — 0/100</h4>
+        <div class="detail-item detail-bad">Section "Experience" : NON DETECTEE</div>
+        <div class="detail-item detail-bad">Section "Formation" : NON DETECTEE</div>
+        <div class="detail-item detail-bad">Section "Competences" : NON DETECTEE</div>
+        <div class="detail-item">Aucun header standard reconnu par le parser</div>
+      </div>
+      <div class="scanner-detail-card">
+        <h4>Experience — 15/100</h4>
+        <div class="detail-item detail-bad">Annees d'experience detectees : 0 (parsing echoue)</div>
+        <div class="detail-item detail-bad">Seulement 1 metrique chiffree trouvee (10%)</div>
+        <div class="detail-item detail-bad">4 bullet points seulement (trop peu)</div>
+      </div>
+      <div class="scanner-detail-card">
+        <h4>Formation — 95/100</h4>
+        <div class="detail-item detail-good">Niveau detecte : Bac+5 (Master/MBA)</div>
+        <div class="detail-item detail-good">Ecole prestigieuse detectee</div>
+        <div class="detail-item">Seul critere qui score bien</div>
+      </div>
+      <div class="scanner-detail-card">
+        <h4>Diagnostic</h4>
+        <div class="detail-item detail-bad">Le format 2 colonnes detruit le parsing</div>
+        <div class="detail-item detail-bad">L'ATS ne voit pas les sections standards</div>
+        <div class="detail-item detail-bad">Le contenu est la, mais l'IA ne le lit pas</div>
+        <div class="detail-item detail-good">Avec le bon format, ce CV peut scorer 85+</div>
+      </div>
+    </div>
+  </div>
 </section>
 
 <!-- POURQUOI EN 2026 -->
@@ -1427,6 +1747,259 @@
   </div>
 </section>
 
+<!-- EXEMPLES CV : BON vs MAUVAIS -->
+<section class="examples-section" id="exemples">
+  <div class="section">
+    <h2 class="section-title">Exemples concrets : CV qui echoue vs CV qui passe</h2>
+    <p class="section-sub">A gauche, les erreurs classiques. A droite, le format qui score 85+ sur tous les ATS.</p>
+
+    <div class="examples-grid">
+      <!-- MAUVAIS EXEMPLE 1 -->
+      <div class="example-card bad-example">
+        <div class="example-content">
+          <div style="display:flex;gap:10px;margin-bottom:8px;">
+            <div style="width:50px;height:50px;background:#ddd;border-radius:50%;flex-shrink:0;display:flex;align-items:center;justify-content:center;font-size:18px;color:#999;">?</div>
+            <div>
+              <div style="font-weight:800;font-size:14px;color:#333;">Marie Dupont</div>
+              <div style="font-size:10px;color:#888;margin-top:2px;">&#9742; &#9993; &#127968;</div>
+            </div>
+          </div>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;">
+            <div style="background:#2c3e50;color:white;padding:10px;border-radius:8px;font-size:9px;">
+              <div style="font-weight:700;margin-bottom:4px;">A PROPOS</div>
+              <div>Passionnee et dynamique, je cherche un poste enrichissant...</div>
+              <div style="margin-top:8px;font-weight:700;">SKILLS</div>
+              <div style="display:flex;gap:2px;flex-wrap:wrap;margin-top:4px;">
+                <div style="background:rgba(255,255,255,0.2);padding:1px 4px;border-radius:2px;font-size:8px;">&#9733;&#9733;&#9733;&#9733;&#9734;</div>
+                <div style="font-size:8px;">Excel</div>
+              </div>
+              <div style="display:flex;gap:2px;flex-wrap:wrap;margin-top:2px;">
+                <div style="background:rgba(255,255,255,0.2);padding:1px 4px;border-radius:2px;font-size:8px;">&#9733;&#9733;&#9733;&#9734;&#9734;</div>
+                <div style="font-size:8px;">Word</div>
+              </div>
+            </div>
+            <div style="font-size:9px;color:#555;">
+              <div style="font-weight:700;">EXPERIENCES</div>
+              <div>Assistante administrative</div>
+              <div style="color:#999;font-size:8px;">Entreprise XYZ • 2020-2023</div>
+              <div style="margin-top:3px;">- Gestion du courrier</div>
+              <div>- Accueil telephonique</div>
+              <div>- Classement des dossiers</div>
+            </div>
+          </div>
+        </div>
+        <div class="example-info">
+          <span class="example-badge bad">SCORE ATS : ~25/100</span>
+          <h3 class="example-title">Le "template Canva" classique</h3>
+          <p class="example-desc">2 colonnes, icones, barres de competences, fond colore dans la sidebar, description en prose. 90% des templates gratuits Canva/Pinterest ont ce format.</p>
+          <div class="example-errors bad">
+            Erreurs : 2 colonnes, skills en barres (non-parsable), photo, icones contact, pas de chiffres, titre generique, description subjective
+          </div>
+        </div>
+      </div>
+
+      <!-- BON EXEMPLE 1 -->
+      <div class="example-card good-example">
+        <div class="example-content">
+          <div style="text-align:center;margin-bottom:6px;">
+            <div style="font-weight:800;font-size:15px;color:#111;">MARIE DUPONT</div>
+            <div style="font-size:11px;font-weight:600;color:#2563eb;">Assistante Administrative Senior</div>
+            <div style="font-size:9px;color:#666;margin-top:2px;">06 12 34 56 78 | marie.dupont@email.com | Paris, France</div>
+          </div>
+          <div style="border-bottom:2px solid #111;margin-bottom:8px;"></div>
+          <div style="font-weight:800;font-size:10px;text-transform:uppercase;letter-spacing:1px;margin-bottom:4px;">Profil</div>
+          <div style="font-size:9px;color:#444;margin-bottom:8px;">Assistante administrative avec 3 ans d'experience en gestion documentaire, accueil et coordination d'equipes. Maitrise de la suite Office et des outils CRM.</div>
+          <div style="font-weight:800;font-size:10px;text-transform:uppercase;letter-spacing:1px;margin-bottom:4px;">Experience</div>
+          <div style="font-weight:700;font-size:10px;">Assistante Administrative Senior</div>
+          <div style="font-size:9px;color:#555;">Entreprise XYZ — Paris | Jan 2020 – Dec 2023 (3 ans)</div>
+          <div style="font-size:9px;color:#333;margin-top:2px;">
+            &#8226; Traitement de <strong>150+ courriers/semaine</strong> et gestion d'un stock de <strong>2000 dossiers</strong><br>
+            &#8226; Accueil de <strong>40 visiteurs/jour</strong>, satisfaction mesuree a <strong>96%</strong><br>
+            &#8226; Mise en place d'un systeme de classement numerique : temps de recherche <strong>-60%</strong>
+          </div>
+          <div style="font-weight:800;font-size:10px;text-transform:uppercase;letter-spacing:1px;margin:8px 0 4px;">Competences</div>
+          <div style="display:flex;flex-wrap:wrap;gap:3px;">
+            <span style="background:#f1f5f9;padding:2px 6px;border-radius:3px;font-size:8px;font-weight:600;">Suite Office</span>
+            <span style="background:#f1f5f9;padding:2px 6px;border-radius:3px;font-size:8px;font-weight:600;">CRM</span>
+            <span style="background:#f1f5f9;padding:2px 6px;border-radius:3px;font-size:8px;font-weight:600;">SAP</span>
+            <span style="background:#f1f5f9;padding:2px 6px;border-radius:3px;font-size:8px;font-weight:600;">Accueil</span>
+            <span style="background:#f1f5f9;padding:2px 6px;border-radius:3px;font-size:8px;font-weight:600;">GED</span>
+          </div>
+        </div>
+        <div class="example-info">
+          <span class="example-badge good">SCORE ATS : 88/100</span>
+          <h3 class="example-title">Le format ATS-proof</h3>
+          <p class="example-desc">1 colonne, headers standards, chiffres dans chaque bullet point, contact en texte brut, competences en tags. Meme profil, score x3.</p>
+          <div class="example-errors good">
+            Pourquoi ca marche : 1 colonne, 0 element graphique, chiffres partout, headers reconnus, contact extractible, titre exact
+          </div>
+        </div>
+      </div>
+
+      <!-- MAUVAIS EXEMPLE 2 -->
+      <div class="example-card bad-example">
+        <div class="example-content">
+          <div style="background:linear-gradient(135deg,#667eea,#764ba2);color:white;padding:12px;margin:-12px -12px 8px;border-radius:6px 6px 0 0;">
+            <div style="font-weight:800;font-size:14px;">Thomas Martin</div>
+            <div style="font-size:10px;opacity:0.8;">Developpeur Web Full-Stack</div>
+          </div>
+          <div style="font-size:9px;color:#555;">
+            <div style="display:flex;gap:4px;margin-bottom:6px;">
+              <span style="background:#667eea;color:white;padding:1px 5px;border-radius:10px;font-size:8px;">React</span>
+              <span style="background:#667eea;color:white;padding:1px 5px;border-radius:10px;font-size:8px;">Node.js</span>
+              <span style="background:#667eea;color:white;padding:1px 5px;border-radius:10px;font-size:8px;">Python</span>
+            </div>
+            <div style="font-weight:700;margin-bottom:2px;">Startup ABC — 2022-2024</div>
+            <div>- Developpement de features</div>
+            <div>- Maintenance du code</div>
+            <div>- Travail en equipe agile</div>
+            <div style="margin-top:6px;font-weight:700;">Freelance — 2020-2022</div>
+            <div>- Creation de sites web</div>
+            <div>- Integration de maquettes</div>
+          </div>
+          <div style="margin-top:8px;font-size:8px;color:#999;">
+            <div style="display:flex;gap:4px;align-items:center;">
+              <div style="width:60px;height:4px;background:#e5e7eb;border-radius:2px;overflow:hidden;"><div style="width:80%;height:100%;background:#667eea;border-radius:2px;"></div></div>
+              <span>React</span>
+            </div>
+            <div style="display:flex;gap:4px;align-items:center;margin-top:2px;">
+              <div style="width:60px;height:4px;background:#e5e7eb;border-radius:2px;overflow:hidden;"><div style="width:60%;height:100%;background:#667eea;border-radius:2px;"></div></div>
+              <span>Python</span>
+            </div>
+          </div>
+        </div>
+        <div class="example-info">
+          <span class="example-badge bad">SCORE ATS : ~35/100</span>
+          <h3 class="example-title">Le CV "designer dev"</h3>
+          <p class="example-desc">Header gradient, competences en barres de progression, pas de dates precises, pas de metriques. Visuellement joli, invisible pour l'ATS.</p>
+          <div class="example-errors bad">
+            Erreurs : barres de skills non-parsables, pas de chiffres, descriptions vagues, header image, dates imprecises, pas d'email/telephone visible
+          </div>
+        </div>
+      </div>
+
+      <!-- BON EXEMPLE 2 -->
+      <div class="example-card good-example">
+        <div class="example-content">
+          <div style="text-align:center;margin-bottom:6px;">
+            <div style="font-weight:800;font-size:15px;color:#111;">THOMAS MARTIN</div>
+            <div style="font-size:11px;font-weight:600;color:#2563eb;">Developpeur Full-Stack React / Node.js</div>
+            <div style="font-size:9px;color:#666;margin-top:2px;">06 98 76 54 32 | thomas.martin@dev.com | Paris | github.com/tmartin</div>
+          </div>
+          <div style="border-bottom:2px solid #111;margin-bottom:8px;"></div>
+          <div style="font-weight:800;font-size:10px;text-transform:uppercase;letter-spacing:1px;margin-bottom:4px;">Competences techniques</div>
+          <div style="font-size:9px;color:#444;margin-bottom:8px;"><strong>Front :</strong> React, TypeScript, Next.js, Tailwind | <strong>Back :</strong> Node.js, Express, Python, PostgreSQL | <strong>DevOps :</strong> Docker, AWS, CI/CD, Git</div>
+          <div style="font-weight:800;font-size:10px;text-transform:uppercase;letter-spacing:1px;margin-bottom:4px;">Experience</div>
+          <div style="font-weight:700;font-size:10px;">Developpeur Full-Stack Senior</div>
+          <div style="font-size:9px;color:#555;">Startup ABC — Paris | 03/2022 – 06/2024 (2 ans 3 mois)</div>
+          <div style="font-size:9px;color:#333;margin-top:2px;">
+            &#8226; Developpe <strong>12 features majeures</strong> en React/Node.js — <strong>+35% d'engagement</strong> utilisateur<br>
+            &#8226; Reduit le temps de chargement de <strong>4.2s a 1.1s</strong> (optimisation Lighthouse <strong>92/100</strong>)<br>
+            &#8226; Mis en place CI/CD GitHub Actions — deploiements <strong>x3 plus rapides</strong>, 0 downtime
+          </div>
+          <div style="font-weight:700;font-size:10px;margin-top:6px;">Developpeur Freelance</div>
+          <div style="font-size:9px;color:#555;">Independant — 01/2020 – 02/2022 (2 ans)</div>
+          <div style="font-size:9px;color:#333;margin-top:2px;">
+            &#8226; Livre <strong>18 projets clients</strong> (e-commerce, SaaS, landing pages) — CA <strong>85K euros</strong><br>
+            &#8226; Integration responsive pixel-perfect — <strong>100% satisfaction client</strong> (NPS 72)
+          </div>
+        </div>
+        <div class="example-info">
+          <span class="example-badge good">SCORE ATS : 91/100</span>
+          <h3 class="example-title">Le format tech ATS-optimise</h3>
+          <p class="example-desc">Meme profil, mais avec des metriques concretes, des dates precises, un titre qui matche et des competences groupees par categorie. Score x2.6.</p>
+          <div class="example-errors good">
+            Pourquoi ca marche : titre exact, competences categorisees, chaque bullet a un chiffre, GitHub visible, dates MM/YYYY, contact en texte brut
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EVOLUTION DES CV : DE VINCI A L'IA -->
+<section class="timeline-section" id="timeline">
+  <div class="section">
+    <h2 class="section-title">L'evolution du CV : de 1482 a 2026</h2>
+    <p class="section-sub">Du premier CV de Leonard de Vinci aux algorithmes d'IA qui rejettent 75% des candidatures.</p>
+
+    <div class="timeline">
+      <div class="timeline-item">
+        <div class="timeline-date">1482</div>
+        <div class="timeline-dot"></div>
+        <div class="timeline-content">
+          <h4>Leonard de Vinci invente le CV</h4>
+          <p>Lettre envoyee au duc de Milan, Ludovico Sforza, listant ses competences en ingenierie militaire et artistique. Premier document d'auto-promotion professionnelle connu.</p>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-date">1950s</div>
+        <div class="timeline-dot"></div>
+        <div class="timeline-content">
+          <h4>Le CV moderne apparait</h4>
+          <p>Apres-guerre, le CV dactylographie devient standard dans le recrutement. Format simple : informations personnelles, experiences, formation. Envoye par courrier postal.</p>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-date">1990s</div>
+        <div class="timeline-dot"></div>
+        <div class="timeline-content">
+          <h4>Le CV numerique</h4>
+          <p>L'email et les job boards (Monster, CareerBuilder) permettent d'envoyer son CV en un clic. Le volume de candidatures explose. Les entreprises sont submergees.</p>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-date">2004</div>
+        <div class="timeline-dot"></div>
+        <div class="timeline-content">
+          <h4>Les premiers ATS</h4>
+          <p>Taleo et iCIMS lancent les premiers systemes de tri automatique. Le parsing de CV commence. Les templates complexes ne posent pas encore de probleme — les volumes sont geres manuellement.</p>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-date">2010</div>
+        <div class="timeline-dot"></div>
+        <div class="timeline-content">
+          <h4>LinkedIn change la donne</h4>
+          <p>100M d'utilisateurs. Les recruteurs cherchent activement. Le CV papier perd de l'importance, mais l'ATS reste le gardien pour les candidatures directes.</p>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-date">2015</div>
+        <div class="timeline-dot"></div>
+        <div class="timeline-content">
+          <h4>Les templates graphiques explosent</h4>
+          <p>Canva, Etsy, Creative Market. Des milliers de templates "creatifs" avec 2 colonnes, icones, barres de progression. Joli a l'oeil, invisible pour les robots.</p>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-date">2020</div>
+        <div class="timeline-dot"></div>
+        <div class="timeline-content">
+          <h4>Le COVID accelere l'automatisation</h4>
+          <p>Recrutement 100% digital. Les entreprises investissent massivement dans l'IA de screening. 82% des entreprises utilisent un outil IA. Les candidatures explosent, les filtres se durcissent.</p>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-date">2024</div>
+        <div class="timeline-dot"></div>
+        <div class="timeline-content">
+          <h4>Les LLM entrent dans le recrutement</h4>
+          <p>ChatGPT, Claude, Gemini. Les ATS integrent des modeles de langage pour comprendre le contexte, pas juste les mots-cles. Mais le parsing reste le goulot d'etranglement.</p>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-date">2026</div>
+        <div class="timeline-dot" style="background:var(--red);width:18px;height:18px;"></div>
+        <div class="timeline-content">
+          <h4>75% des CV sont rejetes par l'IA</h4>
+          <p>AI Act europeen en vigueur. 99% des Fortune 500 ont un ATS. Le format du CV est devenu plus important que le contenu. Un bon profil avec un mauvais format = invisible. C'est la ou on en est.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- SOURCES OFFICIELLES -->
 <section class="sources-section" id="sources">
   <h2 class="section-title">Sources officielles</h2>
@@ -1492,6 +2065,38 @@
       <span class="source-tag media">Media</span>
       <a href="https://www.greatbaystaffing.com/job-blog/2026/2/1/the-resume-black-hole-why-ai-screening-is-failing-both-job-seekers-and-employers" target="_blank">Great Bay Staffing — The Resume Black Hole (2026)</a>
       <p>Analyse du "trou noir du CV" : pourquoi le screening IA echoue autant pour les candidats que pour les employeurs. 52% des recruteurs retrouvent manuellement d'excellents candidats dans la pile des rejetes.</p>
+    </div>
+
+    <!-- SOURCES FRANCAISES -->
+    <div class="source-card">
+      <span class="source-tag industry">France</span>
+      <a href="https://www.apec.fr/tous-nos-outils/optimiser-votre-cv.html" target="_blank">APEC — Optimiser votre CV pour le recrutement</a>
+      <p>L'Association Pour l'Emploi des Cadres donne ses recommandations pour adapter son CV aux outils de recrutement numeriques. Guide officiel pour les cadres francais.</p>
+    </div>
+    <div class="source-card">
+      <span class="source-tag legal">France</span>
+      <a href="https://www.cnil.fr/fr/intelligence-artificielle/ia-et-recrutement" target="_blank">CNIL — IA et recrutement : enjeux ethiques</a>
+      <p>La Commission Nationale de l'Informatique et des Libertes encadre l'utilisation de l'IA dans le recrutement en France. Obligations RGPD et transparence algorithmique.</p>
+    </div>
+    <div class="source-card">
+      <span class="source-tag media">France</span>
+      <a href="https://www.cadremploi.fr/editorial/conseils/conseils-candidature/cv/ats-logiciel-recrutement" target="_blank">Cadremploi — ATS : comment optimiser son CV</a>
+      <p>Guide pratique de Cadremploi pour les candidats francophones. Explication des ATS, erreurs a eviter, et format optimal pour passer les filtres automatiques.</p>
+    </div>
+    <div class="source-card">
+      <span class="source-tag industry">France</span>
+      <a href="https://www.hellowork.com/fr-fr/medias/ats-logiciel-recrutement.html" target="_blank">HelloWork — Qu'est-ce qu'un ATS ?</a>
+      <p>Le leader francais des sites emploi explique le fonctionnement des ATS utilises par les entreprises francaises (Taleez, Flatchr, Beetween, SmartRecruiters).</p>
+    </div>
+    <div class="source-card">
+      <span class="source-tag legal">France</span>
+      <a href="https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000049752606" target="_blank">Legifrance — AI Act transposition en droit francais</a>
+      <p>Texte officiel de la transposition du reglement europeen sur l'intelligence artificielle (AI Act) en droit francais. Le recrutement IA est classe "haut risque".</p>
+    </div>
+    <div class="source-card">
+      <span class="source-tag media">France</span>
+      <a href="https://www.welcometothejungle.com/fr/articles/ats-logiciel-recrutement-cv" target="_blank">Welcome to the Jungle — CV et ATS : le guide complet</a>
+      <p>Media francais de reference sur l'emploi. Article detaille sur les ATS, les pieges des templates graphiques, et comment adapter son CV au marche francais.</p>
     </div>
   </div>
 </section>
