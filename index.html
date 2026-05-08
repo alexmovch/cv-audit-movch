@@ -1504,9 +1504,15 @@
 </footer>
 
 <!-- html2canvas + jsPDF for A4 PDF download -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.2/jspdf.umd.min.js"></script>
+<script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
+<script src="https://unpkg.com/jspdf@2.5.2/dist/jspdf.umd.min.js"></script>
 <script>
+// Wait for libs to load
+window.addEventListener('load', function() {
+  console.log('html2canvas:', typeof html2canvas);
+  console.log('jspdf:', typeof window.jspdf, window.jspdf);
+});
+
 async function downloadCV(elementId, filename) {
   var btn = event.currentTarget;
   var originalHTML = btn.innerHTML;
@@ -1515,37 +1521,45 @@ async function downloadCV(elementId, filename) {
   btn.style.opacity = '0.6';
 
   try {
+    // Check libs are loaded
+    if (typeof html2canvas === 'undefined') throw new Error('html2canvas non charge. Recharge la page.');
+    var JsPDF = (window.jspdf && window.jspdf.jsPDF) || window.jsPDF || null;
+    if (!JsPDF) throw new Error('jsPDF non charge. Recharge la page.');
+
     var el = document.getElementById(elementId);
 
     // Clone the element so we don't break the page
     var clone = el.cloneNode(true);
-    clone.id = '';
+    clone.removeAttribute('id');
+
+    // Copy computed styles for all elements
+    var origAll = el.querySelectorAll('*');
+    var cloneAll = clone.querySelectorAll('*');
+    for (var i = 0; i < origAll.length; i++) {
+      var cs = window.getComputedStyle(origAll[i]);
+      cloneAll[i].style.cssText = cs.cssText;
+    }
 
     // Force A4 dimensions on clone
-    clone.style.cssText = 'width:794px !important; height:1123px !important; aspect-ratio:auto !important; overflow:hidden !important; position:absolute !important; left:0 !important; top:0 !important; background:#fff !important;';
+    clone.style.width = '794px';
+    clone.style.height = '1123px';
+    clone.style.aspectRatio = 'auto';
+    clone.style.overflow = 'hidden';
+    clone.style.position = 'absolute';
+    clone.style.left = '0';
+    clone.style.top = '0';
+    clone.style.background = '#ffffff';
+    clone.style.padding = '40px 36px';
+    clone.style.boxSizing = 'border-box';
 
     // Create offscreen container
     var container = document.createElement('div');
-    container.style.cssText = 'position:fixed; left:-10000px; top:0; width:794px; height:1123px; overflow:hidden; z-index:-9999;';
+    container.style.cssText = 'position:fixed; left:-10000px; top:0; width:794px; height:1123px; overflow:hidden; z-index:-9999; background:#fff;';
     container.appendChild(clone);
     document.body.appendChild(container);
 
-    // Convert photo to inline base64 to avoid CORS
-    var photos = clone.querySelectorAll('img');
-    for (var i = 0; i < photos.length; i++) {
-      try {
-        var img = photos[i];
-        var c = document.createElement('canvas');
-        c.width = img.naturalWidth || 120;
-        c.height = img.naturalHeight || 120;
-        var ctx = c.getContext('2d');
-        ctx.drawImage(img, 0, 0);
-        img.src = c.toDataURL('image/png');
-      } catch(e2) {}
-    }
-
-    // Wait for layout
-    await new Promise(function(r) { setTimeout(r, 500); });
+    // Wait for layout + images
+    await new Promise(function(r) { setTimeout(r, 600); });
 
     var canvas = await html2canvas(clone, {
       scale: 2,
@@ -1560,8 +1574,7 @@ async function downloadCV(elementId, filename) {
     // Remove clone
     document.body.removeChild(container);
 
-    var jsPDF = window.jspdf.jsPDF;
-    var pdf = new jsPDF({
+    var pdf = new JsPDF({
       orientation: 'portrait',
       unit: 'mm',
       format: 'a4'
@@ -1573,7 +1586,7 @@ async function downloadCV(elementId, filename) {
 
   } catch(err) {
     console.error('PDF error:', err);
-    alert('Erreur : ' + err.message + '\n\nEssaie avec Google Chrome.');
+    alert('Erreur : ' + err.message);
   }
 
   btn.innerHTML = originalHTML;
