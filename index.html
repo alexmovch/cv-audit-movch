@@ -499,6 +499,22 @@
       aspect-ratio: 210 / 297;
       overflow: hidden;
     }
+    .template-preview .tp-header-row {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 4px;
+    }
+    .template-preview .tp-photo {
+      width: 60px;
+      height: 60px;
+      min-width: 60px;
+      border-radius: 50%;
+      object-fit: cover;
+      object-position: center 20%;
+      border: 2px solid #ddd;
+    }
+    .template-preview .tp-header-text { flex: 1; }
     .template-preview h4 {
       font-size: 16px;
       font-weight: 800;
@@ -517,6 +533,35 @@
       margin-bottom: 12px;
       padding-bottom: 10px;
       border-bottom: 2px solid #111;
+    }
+
+    /* Download button */
+    .download-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: linear-gradient(135deg, var(--green), #16a34a);
+      color: white;
+      border: none;
+      padding: 12px 24px;
+      border-radius: 10px;
+      font-family: var(--font);
+      font-size: 14px;
+      font-weight: 700;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      margin-top: 16px;
+      width: 100%;
+      justify-content: center;
+    }
+    .download-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(34,197,94,0.3);
+    }
+    .download-btn svg {
+      width: 18px;
+      height: 18px;
+      fill: white;
     }
     .template-preview .tp-section-title {
       font-size: 11px;
@@ -1060,9 +1105,14 @@
 
       <!-- TEMPLATE A : CLASSIQUE CORPORATE -->
       <div class="template-card">
-        <div class="template-preview">
-          <h4>LARA BLOCH</h4>
-          <div class="tp-subtitle">Chef de Projet Marketing Operationnel &amp; Brand Content</div>
+        <div class="template-preview" id="cv-template-a">
+          <div class="tp-header-row">
+            <img src="photo.png" alt="Lara Bloch" class="tp-photo">
+            <div class="tp-header-text">
+              <h4>LARA BLOCH</h4>
+              <div class="tp-subtitle">Chef de Projet Marketing Operationnel &amp; Brand Content</div>
+            </div>
+          </div>
           <div class="tp-contact">+33 6 01 49 80 74 | lasblh.pro@gmail.com | Mobile France entiere<br>Francais (natif) | Anglais C1 (TOEIC 940/990) | Espagnol C1</div>
 
           <div class="tp-section-title">Profil</div>
@@ -1162,15 +1212,24 @@
               <li>Titre exact = match direct avec l'intitule du poste</li>
             </ul>
           </div>
+          <button class="download-btn" onclick="downloadCV('cv-template-a', 'CV-Lara-Bloch-Classique')">
+            <svg viewBox="0 0 24 24"><path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/></svg>
+            Telecharger en PDF (A4)
+          </button>
         </div>
       </div>
 
       <!-- TEMPLATE B : MODERN PRO -->
       <div class="template-card">
-        <div class="template-preview type-b">
+        <div class="template-preview type-b" id="cv-template-b">
           <div class="tp-header">
-            <h4>LARA BLOCH</h4>
-            <div class="tp-subtitle">Chef de Projet CRM &amp; Marketing Digital</div>
+            <div class="tp-header-row">
+              <img src="photo.png" alt="Lara Bloch" class="tp-photo" style="border-color:#475569;">
+              <div class="tp-header-text">
+                <h4>LARA BLOCH</h4>
+                <div class="tp-subtitle">Chef de Projet CRM &amp; Marketing Digital</div>
+              </div>
+            </div>
             <div class="tp-contact">+33 6 01 49 80 74 — lasblh.pro@gmail.com — Paris, mobile France entiere<br>Francais natif | Anglais C1 (TOEIC 940/990) | Espagnol C1 | Permis B</div>
           </div>
 
@@ -1257,12 +1316,19 @@
               <li>Visuellement plus attractif si un humain finit par le lire</li>
             </ul>
           </div>
+          <button class="download-btn" onclick="downloadCV('cv-template-b', 'CV-Lara-Bloch-Modern-Pro')">
+            <svg viewBox="0 0 24 24"><path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/></svg>
+            Telecharger en PDF (A4)
+          </button>
         </div>
       </div>
 
       <!-- TEMPLATE C : MINIMAL ELEGANT -->
       <div class="template-card">
-        <div class="template-preview type-c">
+        <div class="template-preview type-c" id="cv-template-c">
+          <div class="tp-header-row" style="justify-content:center;">
+            <img src="photo.png" alt="Lara Bloch" class="tp-photo" style="width:55px;height:55px;">
+          </div>
           <h4>Lara Bloch</h4>
           <div class="tp-subtitle">Chef de Projet Marketing Operationnel</div>
           <div class="tp-contact">+33 6 01 49 80 74 &bull; lasblh.pro@gmail.com &bull; Paris, France &bull; Mobile nationale<br>Francais (natif) &bull; Anglais C1 — TOEIC 940/990 &bull; Espagnol C1</div>
@@ -1350,6 +1416,10 @@
               <li>Le plus haut score ATS possible car rien ne parasite le contenu</li>
             </ul>
           </div>
+          <button class="download-btn" onclick="downloadCV('cv-template-c', 'CV-Lara-Bloch-Minimal-Elegant')">
+            <svg viewBox="0 0 24 24"><path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/></svg>
+            Telecharger en PDF (A4)
+          </button>
         </div>
       </div>
 
@@ -1433,5 +1503,63 @@
   <p style="margin-top: 8px;"><a href="https://agencymvh.com">agencymvh.com</a></p>
 </footer>
 
+<!-- html2canvas + jsPDF for A4 PDF download -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.2/jspdf.umd.min.js"></script>
+<script>
+async function downloadCV(elementId, filename) {
+  const btn = event.target.closest('.download-btn');
+  const originalText = btn.innerHTML;
+  btn.innerHTML = '<svg viewBox="0 0 24 24" style="animation:spin 1s linear infinite"><path d="M12 4V1L8 5l4 4V6c3.31 0 6 2.69 6 6 0 1-.25 1.97-.7 2.8l1.46 1.46C19.54 15.03 20 13.57 20 12c0-4.42-3.58-8-8-8zm0 14c-3.31 0-6-2.69-6-6 0-1 .25-1.97.7-2.8L5.24 7.74C4.46 8.97 4 10.43 4 12c0 4.42 3.58 8 8 8v3l4-4-4-4v3z"/></svg> Generation en cours...';
+  btn.style.pointerEvents = 'none';
+
+  const el = document.getElementById(elementId);
+
+  // Save original styles
+  const origStyle = el.style.cssText;
+
+  // Set exact A4 pixel size (210x297mm at 96dpi ≈ 794x1123px, we use 2x for quality)
+  el.style.width = '794px';
+  el.style.height = '1123px';
+  el.style.aspectRatio = 'auto';
+  el.style.overflow = 'hidden';
+  el.style.position = 'fixed';
+  el.style.top = '0';
+  el.style.left = '-9999px';
+  el.style.zIndex = '-1';
+
+  // Wait for reflow
+  await new Promise(r => setTimeout(r, 200));
+
+  try {
+    const canvas = await html2canvas(el, {
+      scale: 2,
+      useCORS: true,
+      allowTaint: true,
+      width: 794,
+      height: 1123,
+      windowWidth: 794,
+      windowHeight: 1123
+    });
+
+    const { jsPDF } = window.jspdf;
+    const pdf = new jsPDF({ orientation: 'portrait', unit: 'mm', format: 'a4' });
+    const imgData = canvas.toDataURL('image/jpeg', 0.95);
+    pdf.addImage(imgData, 'JPEG', 0, 0, 210, 297);
+    pdf.save(filename + '.pdf');
+  } catch(e) {
+    console.error(e);
+    alert('Erreur lors de la generation. Essayez avec Chrome.');
+  }
+
+  // Restore
+  el.style.cssText = origStyle;
+  btn.innerHTML = originalText;
+  btn.style.pointerEvents = 'auto';
+}
+</script>
+<style>
+@keyframes spin { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+</style>
 </body>
 </html>
