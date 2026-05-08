@@ -817,7 +817,7 @@
     .scanner-detail-card .detail-good { color: var(--green); }
 
     /* CV EXAMPLES */
-    .examples-section { padding: 80px 20px; }
+    .examples-section { padding: 80px 20px; background: var(--blue-900); }
     .examples-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -836,13 +836,21 @@
     .example-card.bad-example { border-left: 4px solid var(--red); }
     .example-card.good-example { border-left: 4px solid var(--green); }
     .example-content {
-      padding: 24px;
+      padding: 0;
       background: #fff;
       color: #111;
       font-size: 11px;
       line-height: 1.5;
       min-height: 320px;
+      max-height: 500px;
+      overflow: hidden;
       font-family: 'Inter', sans-serif;
+    }
+    .example-content img {
+      width: 100%;
+      display: block;
+      object-fit: cover;
+      object-position: top;
     }
     .example-info { padding: 20px; }
     .example-badge {
@@ -868,9 +876,9 @@
     .example-errors.good { background: rgba(34,197,94,0.1); color: var(--green); }
 
     /* TIMELINE */
-    .timeline-section { background: var(--blue-800); padding: 80px 20px; }
+    .timeline-section { background: var(--blue-800); padding: 100px 20px; }
     .timeline {
-      max-width: 800px;
+      max-width: 900px;
       margin: 0 auto;
       position: relative;
     }
@@ -887,30 +895,31 @@
     .timeline-item {
       display: flex;
       align-items: flex-start;
-      margin-bottom: 40px;
+      margin-bottom: 70px;
       position: relative;
     }
+    .timeline-item:last-child { margin-bottom: 0; }
     .timeline-item:nth-child(odd) { flex-direction: row; }
     .timeline-item:nth-child(even) { flex-direction: row-reverse; }
     .timeline-date {
       width: 45%;
       text-align: right;
-      padding-right: 30px;
-      font-size: 14px;
+      padding-right: 36px;
+      font-size: 18px;
       font-weight: 800;
       color: var(--accent);
     }
     .timeline-item:nth-child(even) .timeline-date {
       text-align: left;
       padding-right: 0;
-      padding-left: 30px;
+      padding-left: 36px;
     }
     .timeline-dot {
       position: absolute;
       left: 50%;
       top: 4px;
-      width: 14px;
-      height: 14px;
+      width: 16px;
+      height: 16px;
       background: var(--accent);
       border-radius: 50%;
       transform: translateX(-50%);
@@ -919,14 +928,14 @@
     }
     .timeline-content {
       width: 45%;
-      padding-left: 30px;
+      padding-left: 36px;
     }
     .timeline-item:nth-child(even) .timeline-content {
       padding-left: 0;
-      padding-right: 30px;
+      padding-right: 36px;
     }
-    .timeline-content h4 { font-size: 14px; font-weight: 700; margin-bottom: 4px; }
-    .timeline-content p { font-size: 12px; color: var(--white-50); line-height: 1.6; }
+    .timeline-content h4 { font-size: 17px; font-weight: 700; margin-bottom: 6px; }
+    .timeline-content p { font-size: 14px; color: var(--white-50); line-height: 1.7; }
 
     /* RESPONSIVE */
     @media (max-width: 768px) {
@@ -979,14 +988,16 @@
 
       /* Examples mobile */
       .examples-grid { grid-template-columns: 1fr; }
-      .example-content { min-height: 200px; padding: 16px; font-size: 10px; }
+      .example-content { min-height: 200px; max-height: 400px; }
 
       /* Timeline mobile */
       .timeline::before { left: 20px; }
-      .timeline-item, .timeline-item:nth-child(even) { flex-direction: column; padding-left: 44px; }
-      .timeline-date, .timeline-item:nth-child(even) .timeline-date { width: 100%; text-align: left; padding: 0; margin-bottom: 4px; }
+      .timeline-item, .timeline-item:nth-child(even) { flex-direction: column; padding-left: 50px; margin-bottom: 50px; }
+      .timeline-date, .timeline-item:nth-child(even) .timeline-date { width: 100%; text-align: left; padding: 0; margin-bottom: 6px; font-size: 16px; }
       .timeline-dot { left: 20px; }
       .timeline-content, .timeline-item:nth-child(even) .timeline-content { width: 100%; padding: 0; }
+      .timeline-content h4 { font-size: 15px; }
+      .timeline-content p { font-size: 13px; }
 
       /* Sources mobile */
       .sources-grid { grid-template-columns: 1fr; gap: 12px; }
@@ -1757,43 +1768,14 @@
       <!-- MAUVAIS EXEMPLE 1 -->
       <div class="example-card bad-example">
         <div class="example-content">
-          <div style="display:flex;gap:10px;margin-bottom:8px;">
-            <div style="width:50px;height:50px;background:#ddd;border-radius:50%;flex-shrink:0;display:flex;align-items:center;justify-content:center;font-size:18px;color:#999;">?</div>
-            <div>
-              <div style="font-weight:800;font-size:14px;color:#333;">Marie Dupont</div>
-              <div style="font-size:10px;color:#888;margin-top:2px;">&#9742; &#9993; &#127968;</div>
-            </div>
-          </div>
-          <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;">
-            <div style="background:#2c3e50;color:white;padding:10px;border-radius:8px;font-size:9px;">
-              <div style="font-weight:700;margin-bottom:4px;">A PROPOS</div>
-              <div>Passionnee et dynamique, je cherche un poste enrichissant...</div>
-              <div style="margin-top:8px;font-weight:700;">SKILLS</div>
-              <div style="display:flex;gap:2px;flex-wrap:wrap;margin-top:4px;">
-                <div style="background:rgba(255,255,255,0.2);padding:1px 4px;border-radius:2px;font-size:8px;">&#9733;&#9733;&#9733;&#9733;&#9734;</div>
-                <div style="font-size:8px;">Excel</div>
-              </div>
-              <div style="display:flex;gap:2px;flex-wrap:wrap;margin-top:2px;">
-                <div style="background:rgba(255,255,255,0.2);padding:1px 4px;border-radius:2px;font-size:8px;">&#9733;&#9733;&#9733;&#9734;&#9734;</div>
-                <div style="font-size:8px;">Word</div>
-              </div>
-            </div>
-            <div style="font-size:9px;color:#555;">
-              <div style="font-weight:700;">EXPERIENCES</div>
-              <div>Assistante administrative</div>
-              <div style="color:#999;font-size:8px;">Entreprise XYZ • 2020-2023</div>
-              <div style="margin-top:3px;">- Gestion du courrier</div>
-              <div>- Accueil telephonique</div>
-              <div>- Classement des dossiers</div>
-            </div>
-          </div>
+          <img src="img/cv-bad-1.png" alt="CV template creatif avec photo, 2 colonnes et badges colores - score ATS faible" loading="lazy">
         </div>
         <div class="example-info">
           <span class="example-badge bad">SCORE ATS : ~25/100</span>
-          <h3 class="example-title">Le "template Canva" classique</h3>
-          <p class="example-desc">2 colonnes, icones, barres de competences, fond colore dans la sidebar, description en prose. 90% des templates gratuits Canva/Pinterest ont ce format.</p>
+          <h3 class="example-title">Le "template creatif" classique</h3>
+          <p class="example-desc">Photo, 2 colonnes, header colore, badges de skills, sidebar foncee. Visuellement attractif mais 90% du contenu est invisible pour l'ATS.</p>
           <div class="example-errors bad">
-            Erreurs : 2 colonnes, skills en barres (non-parsable), photo, icones contact, pas de chiffres, titre generique, description subjective
+            Erreurs : photo de profil, 2 colonnes, skills en badges non-parsables, header graphique, couleurs de fond, icones contact, mise en page complexe
           </div>
         </div>
       </div>
@@ -1801,37 +1783,14 @@
       <!-- BON EXEMPLE 1 -->
       <div class="example-card good-example">
         <div class="example-content">
-          <div style="text-align:center;margin-bottom:6px;">
-            <div style="font-weight:800;font-size:15px;color:#111;">MARIE DUPONT</div>
-            <div style="font-size:11px;font-weight:600;color:#2563eb;">Assistante Administrative Senior</div>
-            <div style="font-size:9px;color:#666;margin-top:2px;">06 12 34 56 78 | marie.dupont@email.com | Paris, France</div>
-          </div>
-          <div style="border-bottom:2px solid #111;margin-bottom:8px;"></div>
-          <div style="font-weight:800;font-size:10px;text-transform:uppercase;letter-spacing:1px;margin-bottom:4px;">Profil</div>
-          <div style="font-size:9px;color:#444;margin-bottom:8px;">Assistante administrative avec 3 ans d'experience en gestion documentaire, accueil et coordination d'equipes. Maitrise de la suite Office et des outils CRM.</div>
-          <div style="font-weight:800;font-size:10px;text-transform:uppercase;letter-spacing:1px;margin-bottom:4px;">Experience</div>
-          <div style="font-weight:700;font-size:10px;">Assistante Administrative Senior</div>
-          <div style="font-size:9px;color:#555;">Entreprise XYZ — Paris | Jan 2020 – Dec 2023 (3 ans)</div>
-          <div style="font-size:9px;color:#333;margin-top:2px;">
-            &#8226; Traitement de <strong>150+ courriers/semaine</strong> et gestion d'un stock de <strong>2000 dossiers</strong><br>
-            &#8226; Accueil de <strong>40 visiteurs/jour</strong>, satisfaction mesuree a <strong>96%</strong><br>
-            &#8226; Mise en place d'un systeme de classement numerique : temps de recherche <strong>-60%</strong>
-          </div>
-          <div style="font-weight:800;font-size:10px;text-transform:uppercase;letter-spacing:1px;margin:8px 0 4px;">Competences</div>
-          <div style="display:flex;flex-wrap:wrap;gap:3px;">
-            <span style="background:#f1f5f9;padding:2px 6px;border-radius:3px;font-size:8px;font-weight:600;">Suite Office</span>
-            <span style="background:#f1f5f9;padding:2px 6px;border-radius:3px;font-size:8px;font-weight:600;">CRM</span>
-            <span style="background:#f1f5f9;padding:2px 6px;border-radius:3px;font-size:8px;font-weight:600;">SAP</span>
-            <span style="background:#f1f5f9;padding:2px 6px;border-radius:3px;font-size:8px;font-weight:600;">Accueil</span>
-            <span style="background:#f1f5f9;padding:2px 6px;border-radius:3px;font-size:8px;font-weight:600;">GED</span>
-          </div>
+          <img src="img/cv-good-1.png" alt="CV 1 colonne ATS-optimise avec metriques et headers standards - score ATS eleve" loading="lazy">
         </div>
         <div class="example-info">
-          <span class="example-badge good">SCORE ATS : 88/100</span>
+          <span class="example-badge good">SCORE ATS : 90/100</span>
           <h3 class="example-title">Le format ATS-proof</h3>
-          <p class="example-desc">1 colonne, headers standards, chiffres dans chaque bullet point, contact en texte brut, competences en tags. Meme profil, score x3.</p>
+          <p class="example-desc">1 colonne, headers standards, chiffres dans chaque bullet point, contact en texte brut, competences en ligne. Le format que les ATS adorent.</p>
           <div class="example-errors good">
-            Pourquoi ca marche : 1 colonne, 0 element graphique, chiffres partout, headers reconnus, contact extractible, titre exact
+            Pourquoi ca marche : 1 colonne, 0 element graphique, chiffres partout, headers reconnus, contact extractible, titre exact, dates precises
           </div>
         </div>
       </div>
@@ -1839,41 +1798,14 @@
       <!-- MAUVAIS EXEMPLE 2 -->
       <div class="example-card bad-example">
         <div class="example-content">
-          <div style="background:linear-gradient(135deg,#667eea,#764ba2);color:white;padding:12px;margin:-12px -12px 8px;border-radius:6px 6px 0 0;">
-            <div style="font-weight:800;font-size:14px;">Thomas Martin</div>
-            <div style="font-size:10px;opacity:0.8;">Developpeur Web Full-Stack</div>
-          </div>
-          <div style="font-size:9px;color:#555;">
-            <div style="display:flex;gap:4px;margin-bottom:6px;">
-              <span style="background:#667eea;color:white;padding:1px 5px;border-radius:10px;font-size:8px;">React</span>
-              <span style="background:#667eea;color:white;padding:1px 5px;border-radius:10px;font-size:8px;">Node.js</span>
-              <span style="background:#667eea;color:white;padding:1px 5px;border-radius:10px;font-size:8px;">Python</span>
-            </div>
-            <div style="font-weight:700;margin-bottom:2px;">Startup ABC — 2022-2024</div>
-            <div>- Developpement de features</div>
-            <div>- Maintenance du code</div>
-            <div>- Travail en equipe agile</div>
-            <div style="margin-top:6px;font-weight:700;">Freelance — 2020-2022</div>
-            <div>- Creation de sites web</div>
-            <div>- Integration de maquettes</div>
-          </div>
-          <div style="margin-top:8px;font-size:8px;color:#999;">
-            <div style="display:flex;gap:4px;align-items:center;">
-              <div style="width:60px;height:4px;background:#e5e7eb;border-radius:2px;overflow:hidden;"><div style="width:80%;height:100%;background:#667eea;border-radius:2px;"></div></div>
-              <span>React</span>
-            </div>
-            <div style="display:flex;gap:4px;align-items:center;margin-top:2px;">
-              <div style="width:60px;height:4px;background:#e5e7eb;border-radius:2px;overflow:hidden;"><div style="width:60%;height:100%;background:#667eea;border-radius:2px;"></div></div>
-              <span>Python</span>
-            </div>
-          </div>
+          <img src="img/cv-bad-2.png" alt="CV avec photo, dots de langues et section hobbies - format non-ATS" loading="lazy">
         </div>
         <div class="example-info">
           <span class="example-badge bad">SCORE ATS : ~35/100</span>
-          <h3 class="example-title">Le CV "designer dev"</h3>
-          <p class="example-desc">Header gradient, competences en barres de progression, pas de dates precises, pas de metriques. Visuellement joli, invisible pour l'ATS.</p>
+          <h3 class="example-title">Le CV "moderne" avec photo</h3>
+          <p class="example-desc">Photo, niveaux de langue en dots, section hobbies, 2 colonnes. Visuellement pro mais l'ATS ne sait pas lire les dots ni les colonnes.</p>
           <div class="example-errors bad">
-            Erreurs : barres de skills non-parsables, pas de chiffres, descriptions vagues, header image, dates imprecises, pas d'email/telephone visible
+            Erreurs : photo, dots de langues non-parsables, 2 colonnes, section hobbies inutile, pas assez de metriques, icones decoratives
           </div>
         </div>
       </div>
@@ -1881,35 +1813,14 @@
       <!-- BON EXEMPLE 2 -->
       <div class="example-card good-example">
         <div class="example-content">
-          <div style="text-align:center;margin-bottom:6px;">
-            <div style="font-weight:800;font-size:15px;color:#111;">THOMAS MARTIN</div>
-            <div style="font-size:11px;font-weight:600;color:#2563eb;">Developpeur Full-Stack React / Node.js</div>
-            <div style="font-size:9px;color:#666;margin-top:2px;">06 98 76 54 32 | thomas.martin@dev.com | Paris | github.com/tmartin</div>
-          </div>
-          <div style="border-bottom:2px solid #111;margin-bottom:8px;"></div>
-          <div style="font-weight:800;font-size:10px;text-transform:uppercase;letter-spacing:1px;margin-bottom:4px;">Competences techniques</div>
-          <div style="font-size:9px;color:#444;margin-bottom:8px;"><strong>Front :</strong> React, TypeScript, Next.js, Tailwind | <strong>Back :</strong> Node.js, Express, Python, PostgreSQL | <strong>DevOps :</strong> Docker, AWS, CI/CD, Git</div>
-          <div style="font-weight:800;font-size:10px;text-transform:uppercase;letter-spacing:1px;margin-bottom:4px;">Experience</div>
-          <div style="font-weight:700;font-size:10px;">Developpeur Full-Stack Senior</div>
-          <div style="font-size:9px;color:#555;">Startup ABC — Paris | 03/2022 – 06/2024 (2 ans 3 mois)</div>
-          <div style="font-size:9px;color:#333;margin-top:2px;">
-            &#8226; Developpe <strong>12 features majeures</strong> en React/Node.js — <strong>+35% d'engagement</strong> utilisateur<br>
-            &#8226; Reduit le temps de chargement de <strong>4.2s a 1.1s</strong> (optimisation Lighthouse <strong>92/100</strong>)<br>
-            &#8226; Mis en place CI/CD GitHub Actions — deploiements <strong>x3 plus rapides</strong>, 0 downtime
-          </div>
-          <div style="font-weight:700;font-size:10px;margin-top:6px;">Developpeur Freelance</div>
-          <div style="font-size:9px;color:#555;">Independant — 01/2020 – 02/2022 (2 ans)</div>
-          <div style="font-size:9px;color:#333;margin-top:2px;">
-            &#8226; Livre <strong>18 projets clients</strong> (e-commerce, SaaS, landing pages) — CA <strong>85K euros</strong><br>
-            &#8226; Integration responsive pixel-perfect — <strong>100% satisfaction client</strong> (NPS 72)
-          </div>
+          <img src="img/cv-good-2.png" alt="CV executive 1 colonne epure avec metriques - format ATS optimise" loading="lazy">
         </div>
         <div class="example-info">
-          <span class="example-badge good">SCORE ATS : 91/100</span>
-          <h3 class="example-title">Le format tech ATS-optimise</h3>
-          <p class="example-desc">Meme profil, mais avec des metriques concretes, des dates precises, un titre qui matche et des competences groupees par categorie. Score x2.6.</p>
+          <span class="example-badge good">SCORE ATS : 92/100</span>
+          <h3 class="example-title">Le format executive clean</h3>
+          <p class="example-desc">1 colonne, structure classique, metriques concretes, titres de sections standards. Pas de fioritures, maximum de lisibilite ATS.</p>
           <div class="example-errors good">
-            Pourquoi ca marche : titre exact, competences categorisees, chaque bullet a un chiffre, GitHub visible, dates MM/YYYY, contact en texte brut
+            Pourquoi ca marche : 1 colonne, titres de section standards, chiffres partout, 0 element decoratif, contact en texte brut, dates precises MM/YYYY
           </div>
         </div>
       </div>
