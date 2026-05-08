@@ -490,12 +490,14 @@
     }
     .template-preview {
       background: #fff;
-      padding: 28px 24px;
+      padding: 40px 36px;
       font-family: 'Inter', sans-serif;
       color: #111;
       font-size: 11px;
       line-height: 1.5;
-      min-height: 480px;
+      /* A4 ratio: 210x297mm = 1:1.414 */
+      aspect-ratio: 210 / 297;
+      overflow: hidden;
     }
     .template-preview h4 {
       font-size: 16px;
@@ -570,8 +572,8 @@
     .template-preview.type-b .tp-header {
       background: #1e293b;
       color: white;
-      margin: -28px -24px 16px;
-      padding: 20px 24px;
+      margin: -40px -36px 16px;
+      padding: 28px 36px;
     }
     .template-preview.type-b .tp-header h4 { color: white; }
     .template-preview.type-b .tp-header .tp-subtitle { color: #93c5fd; }
@@ -739,8 +741,9 @@
   <div class="hero-content">
     <img src="logo.png" alt="MOVCH Agency" class="logo">
     <div class="brand">MOVCH AGENCY</div>
+    <img src="photo.png" alt="Lara Bloch" style="width:100px;height:100px;border-radius:50%;object-fit:cover;object-position:center 20%;border:3px solid var(--white-10);margin-bottom:16px;">
     <h1>Ton CV est <span>invisible</span>.<br>Voici pourquoi.</h1>
-    <p class="hero-sub">En 2026, une intelligence artificielle lit ton CV avant tout humain. Si elle dit non, personne ne te lira jamais. Voici l'analyse d'un vrai CV, et pourquoi il finit dans le vide.</p>
+    <p class="hero-sub">En 2026, une intelligence artificielle lit ton CV avant tout humain. Si elle dit non, personne ne te lira jamais. Voici l'analyse du CV de Lara, et pourquoi il finit dans le vide.</p>
 
     <div class="hero-stats">
       <div class="stat">
@@ -1060,10 +1063,10 @@
         <div class="template-preview">
           <h4>LARA BLOCH</h4>
           <div class="tp-subtitle">Chef de Projet Marketing Operationnel &amp; Brand Content</div>
-          <div class="tp-contact">+33 6 01 49 80 74 | lasblh.pro@gmail.com | Mobile France entiere | Francais (natif) | Anglais C1 (TOEIC 940) | Espagnol C1</div>
+          <div class="tp-contact">+33 6 01 49 80 74 | lasblh.pro@gmail.com | Mobile France entiere<br>Francais (natif) | Anglais C1 (TOEIC 940/990) | Espagnol C1</div>
 
           <div class="tp-section-title">Profil</div>
-          <p style="font-size:10px;color:#444;">Chef de Projet Marketing, 3+ ans d'experience en marketing operationnel, brand content, CRM et trade marketing. Secteurs : cosmetique, retail luxe, complements alimentaires. Expertise Salesforce Marketing Cloud, coordination transverse, lancement produits.</p>
+          <p style="font-size:10px;color:#444;">Chef de Projet Marketing avec 3+ ans d'experience en marketing operationnel, brand content, CRM et trade marketing dans les secteurs cosmetique, retail luxe et complements alimentaires. Expertise en lancement produits, campagnes emailing (Salesforce Marketing Cloud), coordination transverse agences/equipes internationales et pilotage d'evenements.</p>
 
           <div class="tp-section-title">Competences cles</div>
           <div class="tp-skills">
@@ -1074,36 +1077,74 @@
             <span class="tp-skill">Brand Content</span>
             <span class="tp-skill">A/B Testing</span>
             <span class="tp-skill">Emailing</span>
+            <span class="tp-skill">Landing Pages</span>
             <span class="tp-skill">HTML</span>
             <span class="tp-skill">Canva</span>
             <span class="tp-skill">Monday</span>
+            <span class="tp-skill">Trello</span>
+            <span class="tp-skill">Notion</span>
+            <span class="tp-skill">DotDigital</span>
+            <span class="tp-skill">CaptainWallet</span>
           </div>
 
           <div class="tp-section-title">Experience professionnelle</div>
           <div class="tp-job">
             <div class="tp-job-title">Chef de Produit Marketing Digital — CDI</div>
-            <div class="tp-job-company">Cell'Innov SA (Cosmetiques &amp; Complements alimentaires) — Lausanne</div>
+            <div class="tp-job-company">Cell'Innov SA (Cosmetiques &amp; Complements alimentaires) — Lausanne, Suisse</div>
             <div class="tp-job-date">Aout 2023 – Decembre 2025 (2 ans 5 mois)</div>
             <ul>
-              <li>Pilote le lancement de <strong>8 produits</strong> de A a Z, CA genere : <strong>120K€</strong></li>
-              <li>Deploye <strong>15 campagnes emailing/mois</strong> via Salesforce MC — taux ouverture <strong>+23%</strong></li>
-              <li>Cree parcours fidelisation automatise — retention <strong>+15%</strong>, LTV <strong>+30%</strong></li>
+              <li>Pilote le lancement de <strong>8 produits</strong> de A a Z (conception a go-to-market), CA genere : <strong>120K€</strong></li>
+              <li>Deploye <strong>15 campagnes emailing/mois</strong> via Salesforce MC — taux ouverture <strong>+23%</strong>, taux de clic <strong>+8%</strong></li>
+              <li>Cree parcours fidelisation et reacquisition automatises — retention <strong>+15%</strong>, LTV <strong>+30%</strong></li>
+              <li>Gere et optimise les landing pages et contenus du site web</li>
+              <li>Coordonne shootings photo, videos et interviews — <strong>budget 85K€/an</strong></li>
+              <li>Suivi et reporting des KPIs — ROI campagnes <strong>+18%</strong></li>
             </ul>
           </div>
           <div class="tp-job">
-            <div class="tp-job-title">Chef de Projet Marketing &amp; Trade Marketing — CDD</div>
-            <div class="tp-job-company">Sandro — Groupe SMCP — Paris</div>
-            <div class="tp-job-date">Janvier 2023 – Juillet 2023</div>
+            <div class="tp-job-title">Chef de Projet Marketing Operationnel &amp; Trade Marketing — CDD</div>
+            <div class="tp-job-company">Sandro — Groupe SMCP (Retail luxe) — Paris</div>
+            <div class="tp-job-date">Janvier 2023 – Juillet 2023 (6 mois)</div>
             <ul>
-              <li>Strategie marque 360° et trade marketing <strong>45 points de vente</strong> Europe</li>
+              <li>Strategie de marque 360° et coordination transverse equipes/agences</li>
+              <li>Trade marketing <strong>45 points de vente</strong> Grands Magasins Europe — sell-out <strong>+12%</strong></li>
+              <li>Organisation d'evenements VIP boutique et productions contenus photo</li>
+            </ul>
+          </div>
+          <div class="tp-job">
+            <div class="tp-job-title">Chef de Projets CRM — CDD</div>
+            <div class="tp-job-company">Maison 123 — Groupe ETAM (Retail) — Paris</div>
+            <div class="tp-job-date">Juillet 2022 – Janvier 2023 (6 mois)</div>
+            <ul>
+              <li>Campagnes CRM multicanales : emailings, rich SMS, push — <strong>20 campagnes/mois</strong></li>
+              <li>A/B testing parcours clients — conversion <strong>+12%</strong></li>
+              <li>Coordination projets transverses avec filiales internationales</li>
+            </ul>
+          </div>
+          <div class="tp-job">
+            <div class="tp-job-title">Brand Marketing Manager Assistant — CDD</div>
+            <div class="tp-job-company">Sinclair Pharmaceutical Limited (Medecine esthetique) — Paris &amp; Londres</div>
+            <div class="tp-job-date">Janvier 2022 – Juillet 2022 (6 mois)</div>
+            <ul>
+              <li>Pilotage evenements internationaux (IMCAS, SBME) — <strong>6 evenements, 2000+ participants</strong></li>
+              <li>Optimisation contenus digitaux et campagnes CRM — engagement <strong>+18%</strong></li>
             </ul>
           </div>
 
           <div class="tp-section-title">Formation</div>
           <div class="tp-job">
-            <div class="tp-job-title">Master Marketing Management — IESEG School of Management</div>
-            <div class="tp-job-date">2020 – 2022</div>
+            <div class="tp-job-title">Master Programme Grande Ecole — Marketing Management</div>
+            <div class="tp-job-company">IESEG School of Management, Lille — 2020-2022</div>
           </div>
+          <div class="tp-job">
+            <div class="tp-job-title">Classes Preparatoires HEC (ECE) — Institut Stanislas, Cannes — 2017-2019</div>
+          </div>
+          <div class="tp-job">
+            <div class="tp-job-title">Baccalaureat ES Mathematiques — Mention Tres Bien — 2017</div>
+          </div>
+
+          <div class="tp-section-title">Langues</div>
+          <p style="font-size:10px;color:#444;">Francais (natif) &bull; Anglais C1 (TOEIC 940/990) &bull; Espagnol C1 &bull; Italien A1</p>
         </div>
 
         <div class="template-info">
@@ -1130,22 +1171,33 @@
           <div class="tp-header">
             <h4>LARA BLOCH</h4>
             <div class="tp-subtitle">Chef de Projet CRM &amp; Marketing Digital</div>
-            <div class="tp-contact">+33 6 01 49 80 74 — lasblh.pro@gmail.com — Paris, mobile France — FR natif / EN C1 (TOEIC 940) / ES C1</div>
+            <div class="tp-contact">+33 6 01 49 80 74 — lasblh.pro@gmail.com — Paris, mobile France entiere<br>Francais natif | Anglais C1 (TOEIC 940/990) | Espagnol C1 | Permis B</div>
           </div>
 
           <div class="tp-section-title">Resume</div>
-          <p style="font-size:10px;color:#444;">3+ ans en marketing digital, CRM et trade marketing. Specialisee campagnes emailing Salesforce Marketing Cloud, lancement produits et coordination agences. Doubles competences operationnel + strategique. Groupes : SMCP, ETAM, Sinclair Pharma.</p>
+          <p style="font-size:10px;color:#444;">3+ ans en marketing digital, CRM et trade marketing. Specialisee en campagnes emailing via Salesforce Marketing Cloud, lancement produits et coordination d'agences. Doubles competences operationnel + strategique acquises en grands groupes (SMCP, ETAM, Sinclair Pharma) et PME innovantes.</p>
 
           <div class="tp-section-title">Experience</div>
           <div class="tp-job">
             <div class="tp-job-title">CHEF DE PRODUIT MARKETING DIGITAL — CDI</div>
-            <div class="tp-job-company">Cell'Innov SA | Cosmetiques &amp; Complements | Lausanne, Suisse</div>
+            <div class="tp-job-company">Cell'Innov SA | Cosmetiques &amp; Complements alimentaires | Lausanne, Suisse</div>
             <div class="tp-job-date">08/2023 – 12/2025 | 2 ans 5 mois</div>
             <ul>
               <li>Campagnes emailing Salesforce MC : <strong>15/mois</strong>, taux ouverture <strong>+23%</strong>, clic <strong>+8%</strong></li>
               <li>Lancement <strong>8 produits</strong> — coordination produit/tech/copy — CA <strong>120K€</strong></li>
-              <li>Parcours CRM fidelisation/reacquisition — retention <strong>+15%</strong></li>
+              <li>Parcours CRM fidelisation/reacquisition automatises — retention <strong>+15%</strong>, LTV <strong>+30%</strong></li>
               <li>Budget marketing : <strong>85K€/an</strong> — ROI campagnes <strong>+18%</strong></li>
+              <li>Creation landing pages, contenus web, coordination shootings</li>
+            </ul>
+          </div>
+          <div class="tp-job">
+            <div class="tp-job-title">CHEF DE PROJET MARKETING &amp; TRADE MARKETING — CDD</div>
+            <div class="tp-job-company">Sandro — Groupe SMCP | Retail luxe | Paris</div>
+            <div class="tp-job-date">01/2023 – 07/2023 | 6 mois</div>
+            <ul>
+              <li>Strategie marque 360° et coordination transverse equipes/agences</li>
+              <li>Trade marketing <strong>45 points de vente</strong> Grands Magasins Europe — sell-out <strong>+12%</strong></li>
+              <li>Evenements VIP boutique, pilotage productions photo</li>
             </ul>
           </div>
           <div class="tp-job">
@@ -1153,23 +1205,41 @@
             <div class="tp-job-company">Maison 123 — Groupe ETAM | Retail | Paris</div>
             <div class="tp-job-date">07/2022 – 01/2023 | 6 mois</div>
             <ul>
-              <li>CRM multicanal : emailings, rich SMS, push — <strong>20 campagnes/mois</strong></li>
-              <li>A/B testing parcours clients — conversion <strong>+12%</strong></li>
+              <li>CRM multicanal : emailings, rich SMS, print, push — <strong>20 campagnes/mois</strong></li>
+              <li>A/B testing parcours clients segmentes — conversion <strong>+12%</strong></li>
+              <li>Projets transverses avec agences et filiales internationales</li>
+            </ul>
+          </div>
+          <div class="tp-job">
+            <div class="tp-job-title">BRAND MARKETING MANAGER ASSISTANT — CDD</div>
+            <div class="tp-job-company">Sinclair Pharmaceutical Limited | Medecine esthetique | Paris &amp; Londres</div>
+            <div class="tp-job-date">01/2022 – 07/2022 | 6 mois</div>
+            <ul>
+              <li>Evenements internationaux (IMCAS, SBME, symposiums) — <strong>6 events, 2000+ participants</strong></li>
+              <li>Contenus digitaux, shootings, campagnes CRM — engagement <strong>+18%</strong></li>
+              <li>Gestion plateforme e-learning equipes</li>
             </ul>
           </div>
 
           <div class="tp-section-title">Competences techniques</div>
-          <p style="font-size:10px;color:#444;"><strong>CRM/Marketing :</strong> Salesforce Marketing Cloud, DotDigital, CaptainWallet, Google Analytics, HTML, Emailing, A/B Test, Segmentation, Landing Pages<br><strong>Gestion :</strong> Trello, Monday, Notion, Pack Office, Canva, CapCut</p>
+          <p style="font-size:10px;color:#444;"><strong>CRM/Marketing :</strong> Salesforce Marketing Cloud, DotDigital, CaptainWallet, Google Analytics, HTML, Emailing, A/B Test, Segmentation, Landing Pages, SEO<br><strong>Gestion :</strong> Trello, Monday, Notion, Pack Office, Canva, CapCut, Outils IA</p>
 
           <div class="tp-section-title">Formation</div>
           <div class="tp-job">
-            <div class="tp-job-title">Master Marketing — IESEG School of Management, Lille</div>
-            <div class="tp-job-date">2020 – 2022</div>
+            <div class="tp-job-title">Master Marketing Management — IESEG School of Management, Lille | 2020-2022</div>
           </div>
           <div class="tp-job">
-            <div class="tp-job-title">Prepa HEC ECE — Institut Stanislas, Cannes</div>
-            <div class="tp-job-date">2017 – 2019</div>
+            <div class="tp-job-title">Licence (L3) Economie-Gestion — Universite Nice Cote d'Azur | 2019-2020</div>
           </div>
+          <div class="tp-job">
+            <div class="tp-job-title">Prepa HEC ECE — Institut Stanislas, Cannes | 2017-2019</div>
+          </div>
+          <div class="tp-job">
+            <div class="tp-job-title">Bac ES Mathematiques, Mention Tres Bien | 2017</div>
+          </div>
+
+          <div class="tp-section-title">Langues &amp; Centres d'interet</div>
+          <p style="font-size:10px;color:#444;">FR natif | EN C1 (TOEIC 940) | ES C1 | IT A1 — Voyages (Europe, USA, Afrique) | Fitness, danse, tennis, escalade | Art, ceramique, cuisine</p>
         </div>
 
         <div class="template-info">
@@ -1195,28 +1265,51 @@
         <div class="template-preview type-c">
           <h4>Lara Bloch</h4>
           <div class="tp-subtitle">Chef de Projet Marketing Operationnel</div>
-          <div class="tp-contact">+33 6 01 49 80 74 &bull; lasblh.pro@gmail.com &bull; Paris, France<br>Francais (natif) &bull; Anglais C1 — TOEIC 940/990 &bull; Espagnol C1</div>
+          <div class="tp-contact">+33 6 01 49 80 74 &bull; lasblh.pro@gmail.com &bull; Paris, France &bull; Mobile nationale<br>Francais (natif) &bull; Anglais C1 — TOEIC 940/990 &bull; Espagnol C1</div>
 
           <div class="tp-section-title">Synthese</div>
           <p style="font-size:10px;color:#444;text-align:justify;">Professionnelle du marketing operationnel avec 3 ans d'experience en lancement produits, campagnes CRM multicanales et trade marketing. Expertise confirmee sur Salesforce Marketing Cloud, coordination d'equipes transverses et pilotage d'evenements internationaux. Parcours en grands groupes retail (SMCP, ETAM) et PME innovantes (cosmetique, complements alimentaires).</p>
 
           <div class="tp-section-title">Parcours professionnel</div>
           <div class="tp-job">
-            <div class="tp-job-title">Chef de Produit Marketing Digital</div>
-            <div class="tp-job-company">Cell'Innov SA — Lausanne, Suisse — CDI</div>
-            <div class="tp-job-date">Aout 2023 a Decembre 2025</div>
+            <div class="tp-job-title">Chef de Produit Marketing Digital — CDI</div>
+            <div class="tp-job-company">Cell'Innov SA — Cosmetiques &amp; Complements alimentaires — Lausanne, Suisse</div>
+            <div class="tp-job-date">Aout 2023 a Decembre 2025 (2 ans 5 mois)</div>
             <ul>
               <li>Conception et deploiement de <strong>15 campagnes emailing mensuelles</strong> via Salesforce Marketing Cloud (segmentation, ciblage, A/B testing) — taux d'ouverture ameliore de <strong>23%</strong></li>
               <li>Pilotage du lancement de <strong>8 produits</strong> en coordination avec les equipes produit, technique et copywriting — chiffre d'affaires genere : <strong>120 000 euros</strong></li>
               <li>Creation de parcours de fidelisation et reacquisition automatises — taux de retention en hausse de <strong>15%</strong>, LTV augmentee de <strong>30%</strong></li>
+              <li>Gestion du budget marketing annuel de <strong>85 000 euros</strong> — ROI campagnes ameliore de <strong>18%</strong></li>
+              <li>Coordination de la production de contenus : shootings photo, videos, interviews</li>
             </ul>
           </div>
           <div class="tp-job">
-            <div class="tp-job-title">Chef de Projet Marketing &amp; Trade Marketing</div>
-            <div class="tp-job-company">Sandro — Groupe SMCP — Paris — CDD</div>
-            <div class="tp-job-date">Janvier a Juillet 2023</div>
+            <div class="tp-job-title">Chef de Projet Marketing Operationnel &amp; Trade Marketing — CDD</div>
+            <div class="tp-job-company">Sandro — Groupe SMCP (Retail luxe) — Paris</div>
+            <div class="tp-job-date">Janvier a Juillet 2023 (6 mois)</div>
             <ul>
+              <li>Definition et pilotage de la strategie de marque 360 degres, coordination transverse equipes internes et agences</li>
               <li>Pilotage du trade marketing sur <strong>45 points de vente</strong> Grands Magasins Europe — sell-out <strong>+12%</strong></li>
+              <li>Organisation d'evenements VIP en boutique et coordination des productions photo</li>
+            </ul>
+          </div>
+          <div class="tp-job">
+            <div class="tp-job-title">Chef de Projets CRM — CDD</div>
+            <div class="tp-job-company">Maison 123 — Groupe ETAM (Retail) — Paris</div>
+            <div class="tp-job-date">Juillet 2022 a Janvier 2023 (6 mois)</div>
+            <ul>
+              <li>Pilotage de <strong>20 campagnes CRM multicanales par mois</strong> : emailings, rich SMS, print, push</li>
+              <li>Creation et optimisation des parcours clients via A/B testing — taux de conversion <strong>+12%</strong></li>
+              <li>Coordination de projets transverses avec agences et filiales internationales</li>
+            </ul>
+          </div>
+          <div class="tp-job">
+            <div class="tp-job-title">Brand Marketing Manager Assistant — CDD</div>
+            <div class="tp-job-company">Sinclair Pharmaceutical Limited (Medecine esthetique) — Paris &amp; Londres</div>
+            <div class="tp-job-date">Janvier a Juillet 2022 (6 mois)</div>
+            <ul>
+              <li>Organisation de <strong>6 evenements internationaux</strong> (IMCAS, SBME, symposiums) — <strong>2 000+ participants</strong></li>
+              <li>Optimisation des contenus digitaux et campagnes CRM — engagement <strong>+18%</strong></li>
             </ul>
           </div>
 
@@ -1226,12 +1319,20 @@
             <div class="tp-job-company">IESEG School of Management, Lille — 2020-2022</div>
           </div>
           <div class="tp-job">
-            <div class="tp-job-title">Classes Preparatoires HEC (ECE)</div>
-            <div class="tp-job-company">Institut Stanislas, Cannes — 2017-2019</div>
+            <div class="tp-job-title">Licence (L3) Economie-Gestion — Universite Nice Cote d'Azur — 2019-2020</div>
+          </div>
+          <div class="tp-job">
+            <div class="tp-job-title">Classes Preparatoires HEC (ECE) — Institut Stanislas, Cannes — 2017-2019</div>
+          </div>
+          <div class="tp-job">
+            <div class="tp-job-title">Baccalaureat ES option Mathematiques — Mention Tres Bien — 2017</div>
           </div>
 
           <div class="tp-section-title">Competences</div>
-          <p style="font-size:10px;color:#444;">Salesforce Marketing Cloud &bull; Google Analytics &bull; CRM multicanal &bull; Emailing &bull; Trade marketing &bull; Brand content &bull; A/B testing &bull; HTML &bull; Trello &bull; Monday &bull; Notion &bull; Canva</p>
+          <p style="font-size:10px;color:#444;">Salesforce Marketing Cloud &bull; DotDigital &bull; CaptainWallet &bull; Google Analytics &bull; CRM multicanal &bull; Emailing &bull; Trade marketing &bull; Brand content &bull; A/B testing &bull; HTML &bull; Landing Pages &bull; SEO &bull; Trello &bull; Monday &bull; Notion &bull; Canva &bull; CapCut &bull; Pack Office &bull; Outils IA</p>
+
+          <div class="tp-section-title">Centres d'interet</div>
+          <p style="font-size:10px;color:#444;">Voyages (Europe, Etats-Unis, Mexique, Canada, Afrique) &bull; Fitness, danse, tennis, VTT, escalade, ski &bull; Art, ceramique, musique, cuisine</p>
         </div>
 
         <div class="template-info">
